@@ -61,6 +61,11 @@
 (add-hook 'haskell-mode-hook 'haskell-indentation-mode)
 (add-hook 'org-mode-hook 'visual-line-mode)
 
+(add-to-list 'auto-mode-alist '("\\.json$" . javascript-mode))
+
+;; Don't wrap lines in sql mode
+(add-hook 'sql-interactive-mode-hook (lambda () (setq truncate-lines t)))
+
 ;; Set up org mode
 ;; (require 'org-install)
 ;; (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
@@ -113,13 +118,14 @@
 ;;   ;; If there is more than one, they won't work right.
 ;;  )
 
-(require 'smart-tab)
-(global-smart-tab-mode 1)
+;; (require 'smart-tab)
+;; (global-smart-tab-mode 1)
 
 ;; Evil mode for better VIM
 (add-to-list 'load-path "~/.emacs.d/modes/evil")
 (require 'evil)
 (evil-mode 1)
+(setq evil-want-fine-undo t)
 
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
