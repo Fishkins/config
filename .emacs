@@ -57,12 +57,14 @@
 
 ;; Put autosave files (eg #foo#) and backup files (eg foo~) in ~/.emacs.d/.
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(auto-save-file-name-transforms (quote ((".*" "~/.emacs.d/autosaves/\\1" t))))
- '(backup-directory-alist (quote ((".*" . "~/.emacs.d/backups/")))))
+ '(backup-directory-alist (quote ((".*" . "~/.emacs.d/backups/"))))
+ '(custom-safe-themes (quote ("4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" default)))
+ '(initial-buffer-choice "~/org/tasks.org"))
 
 ;; create the autosave dir if necessary, since emacs won't.
 (make-directory "~/.emacs.d/autosaves/" t)
@@ -83,14 +85,18 @@
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
 ;; Installed packages:
+;; magit
 ;; evil
 ;; yaml-mode
 ;; haskell-mode
 ;; clojure-mode
 ;; gitconfig-mode
 ;; nrepl
+;; auto-complete
+;; ac-nrepl
 ;; paredit
 ;; erlang
+;; color-theme-solarized
 
 ;; SQL mode config
 (add-hook 'sql-mode-hook 'sql-highlight-postgres-keywords)
@@ -99,12 +105,6 @@
 (setq tramp-default-method "ssh")
 
 (add-to-list 'auto-mode-alist '("\\.json$" . javascript-mode))
-;; (add-to-list 'auto-mode-alist '("\\.gitconfig$" . conf-mode))
-
-;; yaml editing
-;; (add-to-list 'load-path "/Users/fishkins/.emacs.d/modes/yaml-mode")
-;; (require 'yaml-mode)
-;; (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 
 ;; Set up org mode
 (add-hook 'org-mode-hook 'visual-line-mode)
@@ -112,35 +112,7 @@
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
 (setq org-agenda-files (file-expand-wildcards "~/org/*.org"))
-(add-hook 'org-mode-hook (lambda () (global-set-key (kbd "M-/") 'hippie-expand)))
 (setq org-src-fontify-natively t)
-
-;; ;; LaTeX export of tex files
-;; (require 'org-latex)
-;; (unless (boundp 'org-export-latex-classes)
-;;   (setq org-export-latex-classes nil))
-;; (add-to-list 'org-export-latex-classes
-;;              '("article"
-;;                "\\documentclass{article}"
-;;                ("\\section{%s}" . "\\section*{%s}")))  
-
-
-(add-to-list 'load-path "/Users/fishkins/.emacs.d/modes")
-
-;; ;; Set up latex mode
-;; (setq reftex-plug-into-AUCTeX t)
-;; (add-hook 'LaTeX-mode-hook 'TeX-PDF-mode)
-;; (setq tex-directory "c:/Users/cjudkins/desktop/TestingInstructions")
-
-;; (setq backup-by-copying-when-linked t)
-
-
-;; (custom-set-faces
-;;   ;; custom-set-faces was added by Custom.
-;;   ;; If you edit it by hand, you could mess it up, so be careful.
-;;   ;; Your init file should contain only one such instance.
-;;   ;; If there is more than one, they won't work right.
-;;  )
 
 ;; Evil mode config
 (evil-mode 1)
@@ -155,5 +127,26 @@
 (global-set-key (kbd "C-c +") 'evil-numbers/inc-at-pt)
 (global-set-key (kbd "C-c -") 'evil-numbers/dec-at-pt)
 
-(defun turn-on-paredit () (paredit-mode 1))
-(add-hook 'clojure-mode-hook 'turn-on-paredit)
+(add-hook 'clojure-mode-hook (lambda () (paredit-mode 1)))
+(add-hook 'clojure-mode-hook (lambda () (auto-complete-mode 1)))
+(add-hook 'clojure-mode-hook (lambda () (local-set-key (kbd "M-/") #'auto-complete)))
+
+(add-hook 'shell-mode-hook (lambda () (evil-local-mode 0)))
+
+(setq ispell-program-name "/usr/local/bin/ispell")
+
+(require 'ac-nrepl)
+(add-hook 'nrepl-mode-hook 'ac-nrepl-setup)
+(add-hook 'nrepl-interaction-mode-hook 'ac-nrepl-setup)
+(eval-after-load "auto-complete"
+  '(add-to-list 'ac-modes 'nrepl-mode))
+
+(add-hook 'nrepl-mode-hook (lambda () (auto-complete-mode 1)))
+
+(defun set-auto-complete-as-completion-at-point-function ()
+  (setq completion-at-point-functions '(auto-complete)))
+(add-hook 'auto-complete-mode-hook 'set-auto-complete-as-completion-at-point-function)
+
+(add-hook 'nrepl-mode-hook 'set-auto-complete-as-completion-at-point-function)
+(add-hook 'nrepl-interaction-mode-hook 'set-auto-complete-as-completion-at-point-function)
+(define-key nrepl-interaction-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc)
