@@ -61,6 +61,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ac-trigger-commands nil)
  '(auto-save-file-name-transforms (quote ((".*" "~/.emacs.d/autosaves/\\1" t))))
  '(backup-directory-alist (quote ((".*" . "~/.emacs.d/backups/"))))
  '(custom-safe-themes (quote ("4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" default)))
@@ -83,6 +84,7 @@
 
 (require 'package)
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
 (package-initialize)
 ;; Installed packages:
 ;; magit
@@ -97,6 +99,8 @@
 ;; paredit
 ;; erlang
 ;; color-theme-solarized
+;; helm
+;; org-mode
 
 ;; SQL mode config
 (add-hook 'sql-mode-hook 'sql-highlight-postgres-keywords)
@@ -127,6 +131,11 @@
 (global-set-key (kbd "C-c +") 'evil-numbers/inc-at-pt)
 (global-set-key (kbd "C-c -") 'evil-numbers/dec-at-pt)
 
+;; Custom macro to eval clojure fn in nrepl
+(defun add-clojure-eval-fn ()
+  (fset 'clojure-eval-fun
+	(lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([71 63 41 13 97 3 5 escape] 0 "%d")) arg))))
+(add-hook 'clojure-mode-hook 'add-clojure-eval-fn)
 (add-hook 'clojure-mode-hook (lambda () (paredit-mode 1)))
 (add-hook 'clojure-mode-hook (lambda () (auto-complete-mode 1)))
 (add-hook 'clojure-mode-hook (lambda () (local-set-key (kbd "M-/") #'auto-complete)))
@@ -140,13 +149,31 @@
 (add-hook 'nrepl-interaction-mode-hook 'ac-nrepl-setup)
 (eval-after-load "auto-complete"
   '(add-to-list 'ac-modes 'nrepl-mode))
+(setq ac-auto-start nil)
+(ac-set-trigger-key "TAB")
 
 (add-hook 'nrepl-mode-hook (lambda () (auto-complete-mode 1)))
 
 (defun set-auto-complete-as-completion-at-point-function ()
   (setq completion-at-point-functions '(auto-complete)))
 (add-hook 'auto-complete-mode-hook 'set-auto-complete-as-completion-at-point-function)
-
 (add-hook 'nrepl-mode-hook 'set-auto-complete-as-completion-at-point-function)
 (add-hook 'nrepl-interaction-mode-hook 'set-auto-complete-as-completion-at-point-function)
 (define-key nrepl-interaction-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc)
+
+
+;; Reopen files on restart
+(desktop-save-mode 1)
+
+;; Helm config (like Goto Anything)
+(eval-after-load "helm-regexp"
+  '(helm-attrset 'follow 1 helm-source-moccur))
+
+(defun my-helm-multi-all ()
+  "multi-occur in all buffers backed by files."
+  (interactive)
+  (helm-multi-occur
+   (delq nil
+         (mapcar (lambda (b)
+                   (when (buffer-file-name b) (buffer-name b)))
+                 (buffer-list)))))
