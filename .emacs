@@ -133,7 +133,7 @@
 
 ;; Custom macro to eval clojure fn in nrepl
 (defun add-clojure-eval-fn ()
-  (fset 'clojure-eval-fun
+  (fset 'mycloj-eval-fun
 	(lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([71 63 41 13 97 3 5 escape] 0 "%d")) arg))))
 (add-hook 'clojure-mode-hook 'add-clojure-eval-fn)
 (add-hook 'clojure-mode-hook (lambda () (paredit-mode 1)))
@@ -161,6 +161,12 @@
 (add-hook 'nrepl-interaction-mode-hook 'set-auto-complete-as-completion-at-point-function)
 (define-key nrepl-interaction-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc)
 
+;; End sentences with 1 space
+(setq sentence-end "[.?!][]\"')]*\\($\\|\t\\| \\)[ \t\n]*")
+(setq sentence-end-double-space nil)
+
+;; bigger font
+(set-face-attribute 'default nil :height 165)
 
 ;; Reopen files on restart
 (desktop-save-mode 1)
