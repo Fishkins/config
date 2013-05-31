@@ -87,20 +87,23 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
 (package-initialize)
 ;; Installed packages:
-;; magit
-;; evil
-;; yaml-mode
-;; haskell-mode
-;; clojure-mode
+;; ac-nrepl	
+;; auto-complete	
+;; clojure-mode	
+;; erlang	
+;; evil		
+;; evil-numbers	
 ;; gitconfig-mode
-;; nrepl
-;; auto-complete
-;; ac-nrepl
-;; paredit
-;; erlang
-;; color-theme-solarized
-;; helm
-;; org-mode
+;; haskell-mode	
+;; helm		
+;; magit		
+;; nrepl		
+;; org		
+;; paredit	
+;; popup		
+;; scala-mode	
+;; undo-tree	
+;; yaml-mode	
 
 ;; SQL mode config
 (add-hook 'sql-mode-hook 'sql-highlight-postgres-keywords)
