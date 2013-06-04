@@ -23,7 +23,9 @@
 ;; Open files in new buffer instead of frame
 (setq ns-pop-up-frames nil)
 ;; Maintain margin
-(setq scroll-margin 5)
+(setq scroll-margin 4)
+;; Show line numbers
+(setq global-linum-mode t)
 
 ;; If no region is set, comment/uncomment current line
 (defadvice comment-region (before linecomment)
@@ -104,6 +106,11 @@
 ;; scala-mode	
 ;; undo-tree	
 ;; yaml-mode	
+;; color-theme
+;; color-theme-solarized
+
+;; Color theme
+(load-theme 'solarized-dark t)
 
 ;; SQL mode config
 (add-hook 'sql-mode-hook 'sql-highlight-postgres-keywords)
@@ -186,3 +193,4 @@
          (mapcar (lambda (b)
                    (when (buffer-file-name b) (buffer-name b)))
                  (buffer-list)))))
+
