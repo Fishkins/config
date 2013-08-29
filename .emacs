@@ -15,32 +15,16 @@
 (setq scroll-preserve-screen-position t)
 ;; Unbind ctrl-z
 (global-unset-key [(control z)])
-;; Use ctrl-; and ctrl-: to comment/uncomment regions
-(global-set-key (kbd "C-;") 'comment-region)
-(global-set-key (kbd "C-:") 'uncomment-region)
 ;; Show col number
 (column-number-mode 1)
 ;; Open files in new buffer instead of frame
 (setq ns-pop-up-frames nil)
 ;; Maintain margin
-(setq scroll-margin 4)
+;; (setq scroll-margin 4)
 ;; Show line numbers
-(setq global-linum-mode t)
+;;(global-linum-mode t)
 
-;; If no region is set, comment/uncomment current line
-(defadvice comment-region (before linecomment)
-  "Comments current line if region isn't selected"
-  (interactive
-   (if mark-active (list (region-beginning) (region-end))
-     (list (line-beginning-position)
-           (line-beginning-position 2 )))))
-
-(defadvice uncomment-region (before lineuncomment)
-  "Uncomments current line if region isn't selected."
-  (interactive
-   (if mark-active (list (region-beginning) (region-end))
-     (list (line-beginning-position)
-           (line-beginning-position 2 )))))
+(global-set-key (kbd "C-;") 'evilnc-comment-or-uncomment-lines)
 
 ;; If not region is set, copy/kill current line
 (defadvice kill-ring-save (before slickcopy activate compile)
@@ -67,7 +51,8 @@
  '(auto-save-file-name-transforms (quote ((".*" "~/.emacs.d/autosaves/\\1" t))))
  '(backup-directory-alist (quote ((".*" . "~/.emacs.d/backups/"))))
  '(custom-safe-themes (quote ("4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" default)))
- '(initial-buffer-choice "~/org/tasks.org"))
+ '(initial-buffer-choice "~/org/tasks.org")
+ '(org-agenda-files (quote ("~/org/checkins.org" "~/org/devnotes.org" "~/org/donorfollow.org" "~/org/humble.org" "~/org/install.org" "~/org/interviews.org" "~/org/perfnotes.org" "~/org/performance.org" "~/org/queueingsetup.org" "~/org/rabbitmqnotes.org" "~/org/review.org" "~/org/searchpage.org" "~/org/staffnotes.org" "~/org/storage.org" "~/org/tasks.org"))))
 
 ;; create the autosave dir if necessary, since emacs won't.
 (make-directory "~/.emacs.d/autosaves/" t)
@@ -94,7 +79,9 @@
 ;; clojure-mode	
 ;; erlang	
 ;; evil		
-;; evil-numbers	
+;; evil-numbers
+;; evil-leader
+;; evil-nerd-commenter
 ;; gitconfig-mode
 ;; haskell-mode	
 ;; helm		
@@ -105,12 +92,8 @@
 ;; popup		
 ;; scala-mode	
 ;; undo-tree	
-;; yaml-mode	
-;; color-theme
-;; color-theme-solarized
-
-;; Color theme
-(load-theme 'solarized-dark t)
+;; yaml-mode
+;; key-chord
 
 ;; SQL mode config
 (add-hook 'sql-mode-hook 'sql-highlight-postgres-keywords)
@@ -127,19 +110,45 @@
 (setq org-log-done t)
 (setq org-agenda-files (file-expand-wildcards "~/org/*.org"))
 (setq org-src-fontify-natively t)
+(add-hook 'org-mode-hook 
+	  (lambda () 
+	    (define-key org-mode-map (kbd "RET") 'org-return-indent)))
+;; Completes an item and moves it under completed heading if it exists
+(fset 'myorg-complete
+   (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([3 20 tab 100 100 103 103 112 M-right 107 tab 71] 0 "%d")) arg)))
+
+;; vi hotkeys 
+(require 'evil-leader)
+(setq evil-leader/leader "," evil-leader/in-all-states t)
+(evil-leader/set-key
+  "ci" 'evilnc-comment-or-uncomment-lines
+  "cl" 'evilnc-comment-or-uncomment-to-the-line
+  "k" 'kill-buffer
+  "b" 'switch-to-buffer
+  "w" 'save-buffer
+  "e" 'find-file
+  "x" (lambda () (interactive) (save-buffer) (kill-buffer)))
+(global-evil-leader-mode)
 
 ;; Evil mode config
 (evil-mode 1)
 (setq evil-want-fine-undo t)
 (define-key evil-normal-state-map [escape] 'keyboard-quit)
 (define-key evil-visual-state-map [escape] 'keyboard-quit)
-;; (define-key minibuffer-local-map [escape] 'minibuffer-keyboard-quit)
-;; (define-key minibuffer-local-ns-map [escape] 'minibuffer-keyboard-quit)
-;; (define-key minibuffer-local-completion-map [escape] 'minibuffer-keyboard-quit)
-;; (define-key minibuffer-local-must-match-map [escape] 'minibuffer-keyboard-quit)
-;; (define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
+;; (define-key minibuffer-local-map (kbd "C-[") 'keyboard-escape-quit)
+;; (define-key minibuffer-local-ns-map (kbd "C-[") 'keyboard-escape-quit)
+;; (define-key minibuffer-local-completion-map (kbd "C-[") 'keyboard-escape-quit)
+;; (define-key minibuffer-local-must-match-map (kbd "C-[") 'keyboard-escape-quit)
+;; (define-key minibuffer-local-isearch-map (kbd "C-[") 'keyboard-escape-quit)
 (global-set-key (kbd "C-c +") 'evil-numbers/inc-at-pt)
 (global-set-key (kbd "C-c -") 'evil-numbers/dec-at-pt)
+
+(add-hook 'emacs-lisp-mode-hook (lambda () (paredit-mode 1)))
+
+;; More vi hotkeys
+(setq key-chord-two-keys-delay 0.5)
+(key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
+(key-chord-mode 1)
 
 ;; Custom macro to eval clojure fn in nrepl
 (defun add-clojure-eval-fn ()
@@ -153,6 +162,8 @@
 (add-hook 'shell-mode-hook (lambda () (evil-local-mode 0)))
 
 (setq ispell-program-name "/usr/local/bin/ispell")
+
+(setq w3m-command "/usr/local/bin/w3m")
 
 (require 'ac-nrepl)
 (add-hook 'nrepl-mode-hook 'ac-nrepl-setup)
@@ -194,3 +205,11 @@
                    (when (buffer-file-name b) (buffer-name b)))
                  (buffer-list)))))
 
+;; Always indent after return
+(define-key global-map (kbd "RET") 'newline-and-indent)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
