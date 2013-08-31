@@ -73,27 +73,33 @@
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
 (package-initialize)
-;; Installed packages:
-;; ac-nrepl	
-;; auto-complete	
-;; clojure-mode	
-;; erlang	
-;; evil		
-;; evil-numbers
-;; evil-leader
-;; evil-nerd-commenter
-;; gitconfig-mode
-;; haskell-mode	
-;; helm		
-;; magit		
-;; nrepl		
-;; org		
-;; paredit	
-;; popup		
-;; scala-mode	
-;; undo-tree	
-;; yaml-mode
-;; key-chord
+(mapc
+ (lambda (package)
+   (or (package-installed-p package)
+       (if (y-or-n-p (format "Package %s is missing. Install it? " package)) 
+           (package-install package))))
+ '(
+   ac-nrepl	
+   auto-complete	
+   clojure-mode	
+   erlang	
+   evil		
+   evil-numbers
+   evil-leader
+   evil-nerd-commenter
+   gitconfig-mode
+   haskell-mode	
+   helm		
+   magit		
+   nrepl		
+   org		
+   paredit	
+   popup		
+   scala-mode	
+   undo-tree	
+   yaml-mode
+   key-chord
+   ))
 
 ;; SQL mode config
 (add-hook 'sql-mode-hook 'sql-highlight-postgres-keywords)
@@ -115,7 +121,7 @@
 	    (define-key org-mode-map (kbd "RET") 'org-return-indent)))
 ;; Completes an item and moves it under completed heading if it exists
 (fset 'myorg-complete
-   (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([3 20 tab 100 100 103 103 112 M-right 107 tab 71] 0 "%d")) arg)))
+      (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([3 20 tab 100 100 103 103 112 M-right 107 tab 71] 0 "%d")) arg)))
 
 ;; vi hotkeys 
 (require 'evil-leader)
@@ -127,6 +133,7 @@
   "b" 'switch-to-buffer
   "w" 'save-buffer
   "e" 'find-file
+  "f" 'find-file
   "x" (lambda () (interactive) (save-buffer) (kill-buffer)))
 (global-evil-leader-mode)
 
