@@ -1,0 +1,39 @@
+[core]
+    filemode = false
+    autocrlf = input
+    editor = vim
+[difftool "kdiff3"]
+    path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+    trustExitCode = false
+[difftool]
+    prompt = false
+[diff]
+    tool = kdiff3
+[mergetool "kdiff3"]
+    path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+    trustExitCode = false
+[mergetool]
+    prompt = false
+    keepBackup = false
+[merge]
+    tool = kdiff3
+[alias]
+    lg = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+    co = checkout
+    ci = commit
+    rb = rebase
+    wdiff = "diff -w --word-diff"
+    stat = "status -s"
+    curbranch = "rev-parse --abbrev-ref HEAD"
+    fetchone = "!f() { git fetch $1 $2:refs/remotes/$1/$2; }; f"
+    logp = "log -p --follow"
+    fix = "commit -a -m 'fixup'"
+    amend = "commit --amend --no-edit -a"
+[color]
+    ui = true
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[push]
+	default = matching
