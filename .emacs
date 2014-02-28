@@ -10,7 +10,7 @@
 (show-paren-mode 1)
 ;; Hide toolbar & Menu - moved to registry
 (when window-system (tool-bar-mode -1))
-;; (menu-bar-mode -1)
+(menu-bar-mode -1)
 ;; Maintain line position when scrolling up then down a screen
 (setq scroll-preserve-screen-position t)
 ;; Unbind ctrl-z
@@ -21,8 +21,8 @@
 (setq ns-pop-up-frames nil)
 ;; Maintain margin
 ;; (setq scroll-margin 4)
-;; Show line numbers
-;;(global-linum-mode t)
+(blink-cursor-mode 0)
+(setq ring-bell-function 'ignore)
 
 (global-set-key (kbd "C-;") 'evilnc-comment-or-uncomment-lines)
 
@@ -51,8 +51,8 @@
  '(auto-save-file-name-transforms (quote ((".*" "~/.emacs.d/autosaves/\\1" t))))
  '(backup-directory-alist (quote ((".*" . "~/.emacs.d/backups/"))))
  '(custom-safe-themes (quote ("4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" default)))
- '(initial-buffer-choice "~/org/tasks.org")
- '(org-agenda-files (quote ("~/org/checkins.org" "~/org/devnotes.org" "~/org/donorfollow.org" "~/org/humble.org" "~/org/install.org" "~/org/interviews.org" "~/org/perfnotes.org" "~/org/performance.org" "~/org/queueingsetup.org" "~/org/rabbitmqnotes.org" "~/org/review.org" "~/org/searchpage.org" "~/org/staffnotes.org" "~/org/storage.org" "~/org/tasks.org"))))
+ '(org-agenda-files (quote ("~/org/.performance.org" "~/org/checkins.org" "~/org/devnotes.org" "~/org/donation.org" "~/org/donorfollow.org" "~/org/emails.org" "~/org/interviews.org" "~/org/partnerpage.org" "~/org/queueingsetup.org" "~/org/review.org" "~/org/searchpage.org" "~/org/solr.org" "~/org/springhibernateupgrade.org" "~/org/staffnotes.org" "~/org/tasks.org" "~/org/uploads.org" "~/org/vacation.org")))
+ '(visible-bell nil))
 
 ;; create the autosave dir if necessary, since emacs won't.
 (make-directory "~/.emacs.d/autosaves/" t)
@@ -67,7 +67,7 @@
 (put 'downcase-region 'disabled nil)
 
 ;; Only provide default buffer when opening GUI. Command line will probably be passed a filename.
-(when window-system (custom-set-variables '(initial-buffer-choice "~/org/tasks.org")))
+;; (when window-system (custom-set-variables '(initial-buffer-choice "~/org/tasks.org")))
 
 (require 'package)
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
@@ -76,29 +76,31 @@
 (mapc
  (lambda (package)
    (or (package-installed-p package)
-       (if (y-or-n-p (format "Package %s is missing. Install it? " package)) 
+       (if (y-or-n-p (format "Package %s is missing. Install it? " package))
            (package-install package))))
  '(
-   ac-nrepl	
-   auto-complete	
-   clojure-mode	
-   erlang	
-   evil		
+   ac-nrepl
+   auto-complete
+   clojure-mode
+   erlang
+   evil
    evil-numbers
    evil-leader
    evil-nerd-commenter
    gitconfig-mode
-   haskell-mode	
-   helm		
-   magit		
-   nrepl		
-   org		
-   paredit	
-   popup		
-   scala-mode	
-   undo-tree	
+   haskell-mode
+   helm
+   magit
+   nrepl
+   org
+   paredit
+   popup
+   scala-mode2
+   undo-tree
    yaml-mode
    key-chord
+   auctex
+   sr-speedbar
    ))
 
 ;; SQL mode config
@@ -108,6 +110,8 @@
 (setq tramp-default-method "ssh")
 
 (add-to-list 'auto-mode-alist '("\\.json$" . javascript-mode))
+(add-to-list 'auto-mode-alist '("\\.jsp$" . html-mode))
+(add-to-list 'auto-mode-alist '("\\.(rdf|xul)$" . xml-mode))
 
 ;; Set up org mode
 (add-hook 'org-mode-hook 'visual-line-mode)
@@ -116,30 +120,36 @@
 (setq org-log-done t)
 (setq org-agenda-files (file-expand-wildcards "~/org/*.org"))
 (setq org-src-fontify-natively t)
-(add-hook 'org-mode-hook 
-	  (lambda () 
-	    (define-key org-mode-map (kbd "RET") 'org-return-indent)))
+
 ;; Completes an item and moves it under completed heading if it exists
 (fset 'myorg-complete
-      (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([3 20 tab 100 100 103 103 112 M-right 107 tab 71] 0 "%d")) arg)))
+   (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([109 121 3 20 M-right tab 100 100 103 103 112 107 tab 39 121] 0 "%d")) arg)))
 
-;; vi hotkeys 
+(add-hook 'org-mode-hook
+	  (lambda ()
+	    (define-key org-mode-map (kbd "RET") 'org-return-indent)
+	    (define-key org-mode-map "\C-ct" 'myorg-complete)))
+
+;; vi hotkeys
 (require 'evil-leader)
 (setq evil-leader/leader "," evil-leader/in-all-states t)
 (evil-leader/set-key
   "ci" 'evilnc-comment-or-uncomment-lines
   "cl" 'evilnc-comment-or-uncomment-to-the-line
-  "k" 'kill-buffer
+  "k" 'kill-this-buffer
+  "40" 'kill-buffer-and-window
+  "0" 'delete-window
   "b" 'switch-to-buffer
   "w" 'save-buffer
   "e" 'find-file
   "f" 'find-file
+  "o" 'other-window
   "x" (lambda () (interactive) (save-buffer) (kill-buffer)))
 (global-evil-leader-mode)
 
 ;; Evil mode config
 (evil-mode 1)
-(setq evil-want-fine-undo t)
+;; (setq evil-want-fine-undo t)
 (define-key evil-normal-state-map [escape] 'keyboard-quit)
 (define-key evil-visual-state-map [escape] 'keyboard-quit)
 ;; (define-key minibuffer-local-map (kbd "C-[") 'keyboard-escape-quit)
@@ -154,7 +164,7 @@
 
 ;; More vi hotkeys
 (setq key-chord-two-keys-delay 0.5)
-(key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
+(key-chord-define evil-insert-state-map "kj" 'evil-normal-state)
 (key-chord-mode 1)
 
 ;; Custom macro to eval clojure fn in nrepl
@@ -164,13 +174,11 @@
 (add-hook 'clojure-mode-hook 'add-clojure-eval-fn)
 (add-hook 'clojure-mode-hook (lambda () (paredit-mode 1)))
 (add-hook 'clojure-mode-hook (lambda () (auto-complete-mode 1)))
-(add-hook 'clojure-mode-hook (lambda () (local-set-key (kbd "M-/") #'auto-complete)))
 
 (add-hook 'shell-mode-hook (lambda () (evil-local-mode 0)))
+(add-hook 'artist-mode-hook (lambda () (evil-local-mode 0)))
 
 (setq ispell-program-name "/usr/local/bin/ispell")
-
-(setq w3m-command "/usr/local/bin/w3m")
 
 (require 'ac-nrepl)
 (add-hook 'nrepl-mode-hook 'ac-nrepl-setup)
@@ -187,11 +195,14 @@
 (add-hook 'auto-complete-mode-hook 'set-auto-complete-as-completion-at-point-function)
 (add-hook 'nrepl-mode-hook 'set-auto-complete-as-completion-at-point-function)
 (add-hook 'nrepl-interaction-mode-hook 'set-auto-complete-as-completion-at-point-function)
-(define-key nrepl-interaction-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc)
+;; (define-key nrepl-interaction-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc)
 
 ;; End sentences with 1 space
 (setq sentence-end "[.?!][]\"')]*\\($\\|\t\\| \\)[ \t\n]*")
 (setq sentence-end-double-space nil)
+
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'forward)
 
 ;; bigger font
 (set-face-attribute 'default nil :height 165)
@@ -211,6 +222,20 @@
          (mapcar (lambda (b)
                    (when (buffer-file-name b) (buffer-name b)))
                  (buffer-list)))))
+
+(defun delete-this-buffer-and-file ()
+  "Removes file connected to current buffer and kills buffer."
+  (interactive)
+  (let ((filename (buffer-file-name))
+        (buffer (current-buffer))
+        (name (buffer-name)))
+    (if (not (and filename (file-exists-p filename)))
+        (error "Buffer '%s' is not visiting a file!" name)
+      (when (yes-or-no-p "Are you sure you want to remove this file? ")
+        (delete-file filename)
+        (kill-buffer buffer)
+        (message "File '%s' successfully removed" filename)))))
+(global-set-key (kbd "C-c k") 'delete-this-buffer-and-file)
 
 ;; Always indent after return
 (define-key global-map (kbd "RET") 'newline-and-indent)
