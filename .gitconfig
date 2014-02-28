@@ -2,16 +2,13 @@
     filemode = false
     autocrlf = input
     editor = vim
-[difftool "kdiff3"]
-    path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
-    trustExitCode = false
+[user]
+    name = chris-donorschoose
+    email = chris@donorschoose.org
 [difftool]
     prompt = false
 [diff]
     tool = kdiff3
-[mergetool "kdiff3"]
-    path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
-    trustExitCode = false
 [mergetool]
     prompt = false
     keepBackup = false
@@ -22,7 +19,7 @@
     co = checkout
     ci = commit
     rb = rebase
-    wdiff = "diff -w --word-diff"
+    wdiff = "diff --ignore-space-at-eol -b --ignore-blank-lines -w --word-diff"
     stat = "status -s"
     curbranch = "rev-parse --abbrev-ref HEAD"
     fetchone = "!f() { git fetch $1 $2:refs/remotes/$1/$2; }; f"
@@ -36,4 +33,4 @@
     old = red bold
     new = green bold
 [push]
-	default = matching
+    default = matching
