@@ -7,6 +7,7 @@ allDonations
 api
 appConfiguration
 asFormattedString
+Async
 Aug
 auth
 AYF
@@ -21,6 +22,7 @@ Cisco
 cmd
 co
 config
+CR
 CR'd
 createAlerts
 CRing
@@ -37,13 +39,16 @@ DKIM
 Dmitriy
 donorschoose
 doubleValue
+DR'd
 DRs
+DYI
 Elaine's
 env
 FGC
 FGCG
 findByNamedQuery
 findMostRecentProposalMessageByChallengeSupporter
+Frontend
 GC
 getArgs
 getChallengeName
@@ -59,10 +64,13 @@ getState
 getTimeWhenEnteredWorkflowStatus
 giftpurchases
 gmail
+hotfix
 https
 Ian
+idk
 IE
 inline
+internet
 java
 javascript
 jQuery
@@ -74,6 +82,7 @@ Judkins
 Ken's
 LinkedHashMap
 MacKaye
+Maui
 medsmall
 mins
 mostrecentdonation
@@ -97,6 +106,7 @@ proposalsOnPage
 pushState
 rabbitmq
 recalc
+recalcing
 refactor
 refactored
 regex
@@ -117,6 +127,7 @@ StandardTeacherAlertService
 statechange
 stats
 TeacherAlertService
+Thur
 TODO
 Tollbooth
 toLowerCase

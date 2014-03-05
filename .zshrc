@@ -8,6 +8,7 @@ autoload -U compinit
 compinit
 setopt completeinword
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+autoload zmv
 alias psgrep='ps -ef | head -1;ps -ef | grep -v grep | grep -i'
 alias ll='ls -l'
 alias la='ls -a'
