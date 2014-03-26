@@ -15,6 +15,7 @@ BCCs
 blog
 Boris
 bot
+calcs
 challengemetrics
 challengeNameDisplay
 checkbox
@@ -37,6 +38,8 @@ dirs
 dismissible
 DKIM
 Dmitriy
+donormetrics
+donormmi
 donorschoose
 doubleValue
 DR'd
@@ -44,6 +47,7 @@ DRs
 DYI
 Elaine's
 env
+favs
 FGC
 FGCG
 findByNamedQuery
@@ -64,6 +68,7 @@ getState
 getTimeWhenEnteredWorkflowStatus
 giftpurchases
 gmail
+GP
 hotfix
 https
 Ian
@@ -92,6 +97,7 @@ NSFW
 num
 NumberFormat
 NYC
+OOM
 Optimizely
 org
 params
@@ -119,6 +125,7 @@ SendGrid
 SEO
 setq
 signin
+Solr
 SPF
 SQLs
 SRC
@@ -126,11 +133,14 @@ SSO
 StandardTeacherAlertService
 statechange
 stats
+Steen
+swf
 TeacherAlertService
 Thur
 TODO
 Tollbooth
 toLowerCase
+transitioning
 TUX
 unsubscribe
 verifyOrigin
@@ -139,6 +149,9 @@ ViewChallengeAPIController
 ViewChallengeController
 Vlad
 webcomics
+webflow
 website
 whitelist
+wiki
+wiki's
 YouHaveDonationsToReallocateAlertTypeManager
