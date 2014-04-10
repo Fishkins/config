@@ -9,6 +9,18 @@ compinit
 setopt completeinword
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 autoload zmv
+newcase() {
+    git newcase "${*// /_}"
+}
+gitdiffclass() {
+    git wdiff src/**/$1.java
+}
+gitlogclass() {
+    git logp src/**/$1.java
+}
+gitrebaseresolved() {
+    git pull --rebase dc-master
+}
 alias psgrep='ps -ef | head -1;ps -ef | grep -v grep | grep -i'
 alias ll='ls -l'
 alias la='ls -a'
@@ -18,7 +30,7 @@ alias gpushcurr='git push origin `git curbranch`'
 alias gpushcurrresolved='git push dc-master `git curbranch`:resolved'
 alias gpo='git push origin'
 alias gfm='git fetch dc-master'
-alias codeReview='open "https://github.com/FishkinsDC/donorschoose-web/compare/DonorsChoose:resolved...`git curbranch`?w=1"'
+alias codeReview='open $(echo "https://github.com/FishkinsDC/donorschoose-web/compare/DonorsChoose:resolved...$(git curbranch)?w=1" | tee >(pbcopy))'
 alias syncMusic='rsync -r --delete /Users/fishkins/Music/iTunes/iTunes\ Media/Music/ /Volumes/FISHKINS/Music'
 HISTFILE=~/.zhistory
 HISTSIZE=SAVEHIST=10000
