@@ -180,6 +180,7 @@
 (add-hook 'artist-mode-hook (lambda () (evil-local-mode 0)))
 
 (setq ispell-program-name "/usr/local/bin/ispell")
+(setq markdown-command "/usr/local/bin/markdown")
 
 (require 'ac-nrepl)
 (add-hook 'nrepl-mode-hook 'ac-nrepl-setup)
@@ -237,6 +238,12 @@
         (kill-buffer buffer)
         (message "File '%s' successfully removed" filename)))))
 (global-set-key (kbd "C-c k") 'delete-this-buffer-and-file)
+
+;; yasnippet
+(require 'yasnippet)
+(require 'angular-snippets)
+(eval-after-load "sgml-mode"
+  '(define-key html-mode-map (kbd "C-c C-d") 'ng-snip-show-docs-at-point))
 
 ;; Always indent after return
 (define-key global-map (kbd "RET") 'newline-and-indent)
