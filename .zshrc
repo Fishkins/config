@@ -21,6 +21,9 @@ gitlogclass() {
 gitrebaseresolved() {
     git pull --rebase dc-master
 }
+codeReviewCommits() {
+    open $(git log --pretty=oneline dc-master/resolved.. | awk '{print $1}' | sed -E 's_(.+)_https://github.com/FishkinsDC/donorschoose-web/commit/\1_' | tee >(pbcopy))
+}
 alias psgrep='ps -ef | head -1;ps -ef | grep -v grep | grep -i'
 alias ll='ls -l'
 alias la='ls -a'
@@ -32,6 +35,7 @@ alias gpo='git push origin'
 alias gfm='git fetch dc-master'
 alias codeReview='open $(echo "https://github.com/FishkinsDC/donorschoose-web/compare/DonorsChoose:resolved...$(git curbranch)?w=1" | tee >(pbcopy))'
 alias syncMusic='rsync -r --delete /Users/fishkins/Music/iTunes/iTunes\ Media/Music/ /Volumes/FISHKINS/Music'
+alias reloadConfig='pushd ~; source .zshrc; popd;'
 HISTFILE=~/.zhistory
 HISTSIZE=SAVEHIST=10000
 setopt incappendhistory 
