@@ -33,7 +33,7 @@ alias gpushcurr='git push origin `git curbranch`'
 alias gpushcurrresolved='git push dc-master `git curbranch`:resolved'
 alias gpo='git push origin'
 alias gfm='git fetch dc-master'
-alias codeReview='open $(echo "https://github.com/FishkinsDC/donorschoose-web/compare/DonorsChoose:resolved...$(git curbranch)?w=1" | tee >(pbcopy))'
+alias codeReview='open $(echo "https://github.com/FishkinsDC/donorschoose-web/compare/DonorsChoose:resolved...$(git curbranch)?expand=1" | tee >(pbcopy))'
 alias syncMusic='rsync -r --delete /Users/fishkins/Music/iTunes/iTunes\ Media/Music/ /Volumes/FISHKINS/Music'
 alias reloadConfig='pushd ~; source .zshrc; popd;'
 HISTFILE=~/.zhistory

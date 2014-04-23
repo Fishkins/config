@@ -148,6 +148,12 @@
   "x" (lambda () (interactive) (save-buffer) (kill-buffer)))
 (global-evil-leader-mode)
 
+(defun copy-to-end-of-line ()
+  (interactive)
+  (evil-yank (point) (point-at-eol)))
+
+(define-key evil-normal-state-map "Y" 'copy-to-end-of-line)
+
 ;; Evil mode config
 (evil-mode 1)
 ;; (setq evil-want-fine-undo t)
