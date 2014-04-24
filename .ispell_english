@@ -25,6 +25,7 @@ arg
 args
 ariba
 asFormattedString
+aspectj
 async
 aug
 auth
@@ -86,6 +87,7 @@ Comparision
 conf
 config
 cookied
+CopyConfig
 cos
 CR
 CR'd
@@ -144,8 +146,8 @@ DRs
 dupes
 DYI
 egrep
-ehcache
 EhCache
+ehcache
 ehcached
 Elaine's
 elem
@@ -320,6 +322,7 @@ memcache
 memoriam
 metadata
 mime
+min
 mini
 mins
 misc
@@ -394,8 +397,8 @@ projectlist
 promo
 ProposalComment
 proposalFeedVOs
-proposalid
 proposalId
+proposalid
 proposalList
 proposalmanager
 proposalmessage
@@ -411,8 +414,8 @@ px
 qa
 quickbooks
 quirk
-rabbitmq
 RabbitMQ
+rabbitmq
 reattach
 recalc
 recalcing
@@ -450,8 +453,8 @@ SecondWarning
 secs
 sed
 sendEmail
-sendgrid
 SendGrid
+sendgrid
 sendWarningFaxAndReturnSuccess
 SEO
 sept
@@ -569,10 +572,10 @@ wonky
 workflow
 wtf
 xerces
+xml
 XSS
 YouHaveDonationsToReallocateAlertTypeManager
 zakas
 zip
 zipcode
 zoneid
-aspectj
