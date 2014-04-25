@@ -21,6 +21,28 @@ gitlogclass() {
 gitrebaseresolved() {
     git pull --rebase dc-master
 }
+gitcheckout() {
+    branches=`git branch | grep -v "^*" | grep -i $1`
+    numBranches=`echo $branches | wc -w | awk '{print $1}'`
+
+    while [ ! $numBranches -eq 1 ]
+    do
+	if [ $numBranches -eq 0 ]
+	then
+	    echo "No such branch. Choose one of these branches."
+	    branches=`git branch | grep -v "^*"`
+	else
+	    echo "Multiple matches. Add another filter."
+	fi
+
+	echo $branches
+	read newFilter
+	branches=`echo $branches | grep -i $newFilter`
+	numBranches=`echo $branches | wc -w | awk '{print $1}'`
+    done
+    
+    echo $branches | xargs git checkout
+}
 codeReviewCommits() {
     open $(git log --pretty=oneline dc-master/resolved.. | awk '{print $1}' | sed -E 's_(.+)_https://github.com/FishkinsDC/donorschoose-web/commit/\1_' | tee >(pbcopy))
 }
