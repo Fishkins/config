@@ -1,6 +1,6 @@
 set autoindent
 set ignorecase
 set smartcase
-set hlsearch
 set saney
+set clipboard=unnamed
 

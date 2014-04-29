@@ -13,6 +13,7 @@ AlertType
 AlertUtils
 Ali
 allDonations
+ANDs
 anytime
 AoEs
 apache
@@ -89,6 +90,7 @@ config
 cookied
 CopyConfig
 cos
+costToComplete
 CR
 CR'd
 createAlerts
@@ -110,6 +112,7 @@ deductible
 def
 DefaultRemindLateConfirmWarningEmailGeneratorData
 deliminated
+Demo'd
 demux
 denormalized
 desc
@@ -122,6 +125,7 @@ dhostname
 diffing
 dir
 dirs
+disciplineList
 dismissible
 div
 divs
@@ -146,6 +150,7 @@ DRs
 dupes
 DYI
 egrep
+ehache
 EhCache
 ehcache
 ehcached
@@ -258,6 +263,7 @@ ImmutableMap
 impl
 indemnification
 ineligible
+INF
 init
 inline
 innertemplate
@@ -265,6 +271,7 @@ int
 internet
 intraday
 intro
+iters
 jan
 java
 javadoc
@@ -364,6 +371,7 @@ oxm
 param
 params
 passwordless
+pastTeacherList
 paymentvo
 paypal
 pdf
@@ -405,6 +413,7 @@ proposalmessage
 proposalsOnPage
 proposaltypeid
 proxy
+PRs
 psql
 pushd
 pushState
@@ -514,6 +523,8 @@ tfa
 thankyou
 Thur
 timestamp
+timeToIdleSeconds
+timeToLiveSeconds
 TODO
 Tollbooth
 toLowerCase
@@ -551,8 +562,10 @@ versioning
 viewchallenge
 ViewChallengeAPIController
 ViewChallengeController
+vim
 Vlad
 vm
+vrapper
 vs
 wang
 wc
@@ -563,6 +576,7 @@ webpage
 website
 wei
 whitelist
+widenDepth
 wiki
 wiki's
 wildcard
