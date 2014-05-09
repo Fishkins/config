@@ -46,13 +46,15 @@ gitcheckout() {
 codeReviewCommits() {
     open $(git log --pretty=oneline dc-master/resolved.. | awk '{print $1}' | sed -E 's_(.+)_https://github.com/FishkinsDC/donorschoose-web/commit/\1_' | tee >(pbcopy))
 }
+gpushcurrresolved() {
+    git push dc-master `git curbranch`:resolved
+}
+alias gpushcurr='git push origin `git curbranch`'
 alias psgrep='ps -ef | head -1;ps -ef | grep -v grep | grep -i'
 alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
 alias ltr='ls -ltr'
-alias gpushcurr='git push origin `git curbranch`'
-alias gpushcurrresolved='git push dc-master `git curbranch`:resolved'
 alias gdeletemerged='git branch --merged=dc-master/resolved | grep BUGZID | grep -v "^*" | xargs git branch -d; git fetch origin --prune;'
 alias gpo='git push origin'
 alias gfm='git fetch dc-master'

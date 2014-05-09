@@ -36,6 +36,7 @@ AYF
 backend
 backfilled
 batchfund
+batchname
 BCCs
 beleaguered
 bestmatching
@@ -56,6 +57,7 @@ callee
 callout
 campaignid
 cancellable
+Candice
 canSendFax
 catchall
 catchup
@@ -87,6 +89,7 @@ combos
 Comparision
 conf
 config
+convo
 cookied
 CopyConfig
 cos
@@ -151,8 +154,8 @@ dupes
 DYI
 egrep
 ehache
-EhCache
 ehcache
+EhCache
 ehcached
 Elaine's
 elem
@@ -374,6 +377,7 @@ passwordless
 pastTeacherList
 paymentvo
 paypal
+PBD
 pdf
 perf
 perfdata
@@ -405,8 +409,8 @@ projectlist
 promo
 ProposalComment
 proposalFeedVOs
-proposalId
 proposalid
+proposalId
 proposalList
 proposalmanager
 proposalmessage
@@ -423,8 +427,8 @@ px
 qa
 quickbooks
 quirk
-RabbitMQ
 rabbitmq
+RabbitMQ
 reattach
 recalc
 recalcing
@@ -462,8 +466,8 @@ SecondWarning
 secs
 sed
 sendEmail
-SendGrid
 sendgrid
+SendGrid
 sendWarningFaxAndReturnSuccess
 SEO
 sept
@@ -593,3 +597,5 @@ zakas
 zip
 zipcode
 zoneid
+src
+lucene

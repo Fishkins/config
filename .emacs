@@ -4,6 +4,8 @@
 (setq inhibit-startup-screen t)
 ;; Use spaces instead of tab chars, make tabs 4 spaces
 (setq tab-width 4)
+(setq c-basic-indent 4)
+(setq-default indent-tabs-mode nil)
 ;; Never require typing full yes or no
 (fset 'yes-or-no-p 'y-or-n-p)
 ;; Highlight matching parens
