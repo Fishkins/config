@@ -10,7 +10,7 @@ setopt completeinword
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 autoload zmv
 newcase() {
-    git newcase "${*// /_}"
+    git newcase "${*//[: ]+/_}"
 }
 gitdiffclass() {
     git wdiff src/**/$1.java
