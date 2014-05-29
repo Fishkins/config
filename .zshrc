@@ -10,7 +10,8 @@ setopt completeinword
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 autoload zmv
 newcase() {
-    git newcase "${*//[: ]+/_}"
+    branch_name=`echo $1 | sed 's/[ :]\{1,\}/_/g'`
+    git newcase $branch_name
 }
 gitdiffclass() {
     git wdiff src/**/$1.java
