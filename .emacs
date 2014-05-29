@@ -118,6 +118,7 @@
 
 ;; Set up org mode
 (add-hook 'org-mode-hook 'visual-line-mode)
+(add-hook 'org-mode-hook (lambda () (flyspell-mode 1)))
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
@@ -147,6 +148,8 @@
   "e" 'find-file
   "f" 'find-file
   "o" 'other-window
+  "ii" 'ispell
+  "iw" 'ispell-word
   "x" (lambda () (interactive) (save-buffer) (kill-buffer)))
 (global-evil-leader-mode)
 
