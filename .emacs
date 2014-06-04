@@ -149,7 +149,7 @@
   "f" 'find-file
   "o" 'other-window
   "ii" 'ispell
-  "iw" 'ispell-word
+  "iw" 'flyspell-check-previous-highlighted-word
   "x" (lambda () (interactive) (save-buffer) (kill-buffer)))
 (global-evil-leader-mode)
 
@@ -190,7 +190,12 @@
 (add-hook 'shell-mode-hook (lambda () (evil-local-mode 0)))
 (add-hook 'artist-mode-hook (lambda () (evil-local-mode 0)))
 
-(setq ispell-program-name "/usr/local/bin/ispell")
+;; ispell/aspell config
+(setq ispell-silently-savep t)
+(setq ispell-program-name "/usr/local/bin/aspell")
+(setq ispell-extra-args '("--sug-mode=ultra" "--ignore-case"))
+(setq ispell-list-command "list")
+
 (setq markdown-command "/usr/local/bin/markdown")
 
 (require 'ac-nrepl)
