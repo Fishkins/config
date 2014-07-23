@@ -104,6 +104,7 @@
    key-chord
    auctex
    sr-speedbar
+   ace-jump-mode
    ))
 
 ;; SQL mode config
@@ -269,3 +270,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; Ace Jump
+(require 'ace-jump-mode)
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+(define-key evil-normal-state-map (kbd "SPC") 'ace-jump-mode)

@@ -10,7 +10,7 @@ setopt completeinword
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 autoload zmv
 newcase() {
-    branch_name=`echo $1 | sed 's/[ :]\{1,\}/_/g'`
+    branch_name=`echo $1 | sed "s/[ :\']\{1,\}/_/g"`
     git newcase $branch_name
 }
 gitdiffclass() {
@@ -51,7 +51,7 @@ gpushcurrresolved() {
     git push dc-master `git curbranch`:resolved
 }
 alias gpushcurr='git push origin `git curbranch`'
-alias psgrep='ps -ef | head -1;ps -ef | grep -v grep | grep -i'
+alias psgrep='ps -ef | head -1;ps -ef | grep -v grep | egrep -i'
 alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
@@ -59,9 +59,10 @@ alias ltr='ls -ltr'
 alias gdeletemerged='git branch --merged=dc-master/resolved | grep BUGZID | grep -v "^*" | xargs git branch -d; git fetch origin --prune;'
 alias gpo='git push origin'
 alias gfm='git fetch dc-master'
-alias codeReview='open $(echo "https://github.com/FishkinsDC/donorschoose-web/compare/DonorsChoose:resolved...$(git curbranch)?expand=1" | tee >(pbcopy))'
+alias codeReview='open $(echo "https://github.com/FishkinsDC/donorschoose-web/compare/DonorsChoose:resolved...$(git curbranch)?expand=1&w=1" | tee >(pbcopy))'
 alias syncMusic='rsync -r --delete /Users/fishkins/Music/iTunes/iTunes\ Media/Music/ /Volumes/FISHKINS/Music'
 alias reloadConfig='pushd ~; source .zshrc; popd;'
+alias killMicrosoftDaemons="while true; do kill $(ps -ef | grep -v grep | egrep -i "(syncservicesag|database)" | awk '{print $2}'); done"
 HISTFILE=~/.zhistory
 HISTSIZE=SAVEHIST=10000
 setopt incappendhistory 
