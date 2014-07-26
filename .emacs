@@ -128,12 +128,12 @@
 
 ;; Completes an item and moves it under completed heading if it exists
 (fset 'myorg-complete
-   (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([109 121 3 20 M-right tab 100 100 103 103 112 107 tab 39 121] 0 "%d")) arg)))
+      (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([109 121 3 20 M-right tab 100 100 103 103 112 107 tab 39 121] 0 "%d")) arg)))
 
 (add-hook 'org-mode-hook
-	  (lambda ()
-	    (define-key org-mode-map (kbd "RET") 'org-return-indent)
-	    (define-key org-mode-map "\C-ct" 'myorg-complete)))
+          (lambda ()
+            (define-key org-mode-map (kbd "RET") 'org-return-indent)
+            (define-key org-mode-map "\C-ct" 'myorg-complete)))
 
 ;; vi hotkeys
 (require 'evil-leader)
@@ -172,6 +172,42 @@
 ;; (define-key minibuffer-local-isearch-map (kbd "C-[") 'keyboard-escape-quit)
 (global-set-key (kbd "C-c +") 'evil-numbers/inc-at-pt)
 (global-set-key (kbd "C-c -") 'evil-numbers/dec-at-pt)
+
+(setq evil-esc-delay 0)
+
+(defun evil-org-after (fun)
+  (evil-open-below 1)
+  (funcall fun))
+
+(defun evil-org-before (fun)
+  (evil-open-above 1)
+  (funcall fun))
+
+(evil-declare-key 'normal org-mode-map
+  "H" 'org-beginning-of-line ; smarter behaviour on headlines etc.
+  "L" 'org-end-of-line ; smarter behaviour on headlines etc.
+  (kbd "TAB") 'org-cycle
+  "-" 'org-ctrl-c-minus ; change bullet style
+  "<" 'org-metaleft ; out-dent
+  ">" 'org-metaright ; indent
+  "(" 'org-backward-sentence
+  ")" 'org-forward-sentence
+  "{" 'org-backward-paragraph
+  "}" 'org-forward-paragraph
+  "t" 'myorg-complete
+  "T" '(lambda () (interactive) (evil-org-after (lambda() (org-insert-todo-heading nil))))
+  "gO" '(lambda () (interactive) (evil-org-before 'org-insert-heading))
+  "go" '(lambda () (interactive) (evil-org-after 'org-insert-heading))
+  )
+;; "gk" 'outline-up-heading
+;; "gj" 'outline-next-visible-heading
+;; "$" 'org-end-of-line ; smarter behaviour on headlines etc.
+;; "^" 'org-beginning-of-line ; ditto
+;; ",e" 'org-export-dispatch
+;; ",n" 'outline-next-visible-heading
+;; ",p" 'outline-previous-visible-heading
+;; ",t" 'org-set-tags-command
+;; ",u" 'outline-up-heading
 
 (add-hook 'emacs-lisp-mode-hook (lambda () (paredit-mode 1)))
 

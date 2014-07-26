@@ -1,4 +1,4 @@
-personal_ws-1.1 en 928 
+personal_ws-1.1 en 944 
 getIndexHistorical
 refactor
 stats
@@ -101,8 +101,8 @@ ProposalStatus
 DCProposal
 dcproposal
 applogic
-smalls
 DonorChooseURI
+smalls
 RFParamForProjectWithTeacherIdDecorator
 donorsjews
 username
@@ -193,8 +193,8 @@ min
 proposalSearchResults
 philanthropy
 meetup
-UpdateSolrIndexBatchJob
 uninstall
+UpdateSolrIndexBatchJob
 NSFW
 listjobs
 Los
@@ -299,8 +299,8 @@ stalkers
 tfa
 bitrate
 refs
-RabbitMQ
 rabbitmq
+RabbitMQ
 spellcheck
 phototype
 widenDepth
@@ -332,8 +332,8 @@ fileupload
 SSO
 ProposalPointsManagerImpl
 SecondWarning
-SendGrid
 sendgrid
+SendGrid
 challengeNameDisplay
 pref
 STS
@@ -358,6 +358,7 @@ Ruscetta
 convo
 elem
 webpage
+postClean
 uri
 checksum
 SASS
@@ -372,6 +373,7 @@ usr
 txt
 challengeid
 prod
+mincount
 photospublisheddate
 listFilesCommand
 rethrown
@@ -383,8 +385,8 @@ donormetrics
 geotargeted
 params
 APPNAME
-ehcache
 EhCache
+ehcache
 memcache
 Xiu
 PhotoManager
@@ -436,8 +438,8 @@ leaderboardcategoryid
 haha
 FF
 zakas
-gc
 dr
+gc
 disciplineList
 fi
 du
@@ -446,14 +448,15 @@ eq
 wonky
 setq
 es
+fq
 fs
 laptop
 ie
 GP
 hl
 refactored
-gt
 FY
+gt
 socialnetwork
 rabbitmqadmin
 io
@@ -471,9 +474,9 @@ storagepath
 esac
 ls
 mq
-lz
-ok
 qa
+ok
+lz
 mv
 XDELETE
 subdirs
@@ -485,9 +488,9 @@ PR
 lookupManager
 SF
 setComment
-pw
-rm
 sh
+rm
+pw
 px
 SL
 HDDs
@@ -498,14 +501,14 @@ sr
 UI
 entrepreneurial
 su
-wc
 tr
+wc
 un
 emailing
 vm
 WI
-homepage
 solrconfig
+homepage
 vo
 pastTeacherList
 bestmatching
@@ -555,9 +558,11 @@ internet
 thankyou
 exec
 lscache
+crontab
 spec
 Dropkick
 uncomment
+updateIndex
 smtp
 gmail
 exif
@@ -577,8 +582,8 @@ Litle
 breadcrumb
 fishkins
 logfile
-enamored
 FeedbackType
+enamored
 DonorPhotoCropController
 fbsso
 registries
@@ -672,6 +677,7 @@ chicago
 externalized
 getArgs
 photospublished
+httpclient
 PhotoDWRWebService
 uniq
 Frontend
@@ -727,6 +733,7 @@ socialnetworkcontactid
 website
 checksums
 numproposalssupported
+snippets
 onclick
 warmup
 makeOnProcessingSuccessCallback
@@ -745,17 +752,21 @@ cutover
 giftpurchases
 sysconfig
 lobos
+sonic
+solrj
 jndi
 aspectj
 intro
 teachertypes
 deliminated
+Solr's
 Flobots
 fubar
 DonorPhotoUploadController
 RemindLateConfirmFirstWarningEmailJob
 getState
 chown
+geodist
 deletedate
 marshallers
 showZeroFacetCountsForSchools
@@ -781,6 +792,7 @@ timestamps
 rabbitmqctl
 unencoded
 enablePositionIncrements
+killjob
 getopts
 charles
 proposalFeedVOs
@@ -796,6 +808,7 @@ getTimeWhenEnteredWorkflowStatus
 goodString
 redelivery
 workspace
+barkley
 logon
 costToComplete
 https
@@ -831,8 +844,8 @@ vsum
 preload
 dcadminuser
 NODENAME
-jMagick
 jmagick
+jMagick
 Demo'd
 spoof
 enrichment
@@ -842,8 +855,8 @@ numdonors
 donationoffset
 photocount
 donoraccount
-JSPs
 jsps
+JSPs
 loadResources
 getFullDefaultPhotoURL
 buildSystemComment
@@ -863,9 +876,11 @@ classloader
 DonorCropCont
 UserDataAccessImpl
 admins
+geofilt
 crowdsourced
 decrypt
 campaignid
+httpcore
 subuser
 adminuserid
 getProposalToDonationsMap
@@ -880,6 +895,7 @@ AlertDismissal
 persistance
 ObjectStorageManager
 MaxPermSize
+deciles
 Boris
 mime
 subdomain
@@ -914,8 +930,8 @@ toLowerCase
 LZWM's
 mitsu
 djobname
-RabbitmqConsumer
 rabbitmqconsumer
+RabbitmqConsumer
 async
 photoaliasuser
 Cacheable
@@ -927,8 +943,3 @@ diffing
 unsubscribe
 zoneid
 CDN
-httpclient
-httpcore
-crontab
-killjob
-solrj
