@@ -1,4 +1,4 @@
-personal_ws-1.1 en 944 
+personal_ws-1.1 en 949 
 getIndexHistorical
 refactor
 stats
@@ -105,6 +105,7 @@ DonorChooseURI
 smalls
 RFParamForProjectWithTeacherIdDecorator
 donorsjews
+fq's
 username
 idk
 Ghenet
@@ -135,6 +136,7 @@ gte
 copyconfig
 CopyConfig
 args
+proposalindexview
 blog
 uncheck
 clojure
@@ -173,6 +175,7 @@ proposalId
 callable
 lib
 createchallenge
+urgencyscore
 DDOS
 lowercase
 accountcredit
@@ -385,8 +388,8 @@ donormetrics
 geotargeted
 params
 APPNAME
-EhCache
 ehcache
+EhCache
 memcache
 Xiu
 PhotoManager
@@ -406,6 +409,7 @@ toTest
 philanthropists
 t'other
 DailyEmailsManagerImpl
+sortBy
 TeacherAlertService
 donormmi
 AdminUser
@@ -694,6 +698,7 @@ emails
 Vlad
 replicators
 dropdowns
+superset
 denormalized
 whitelist
 wildcards
@@ -750,16 +755,16 @@ PhotoNamingHelper
 honorees
 cutover
 giftpurchases
+sonic
 sysconfig
 lobos
-sonic
 solrj
 jndi
 aspectj
 intro
 teachertypes
-deliminated
 Solr's
+deliminated
 Flobots
 fubar
 DonorPhotoUploadController

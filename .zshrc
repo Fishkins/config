@@ -22,7 +22,7 @@ gitlogclass() {
 gitrebaseresolved() {
     git pull --rebase dc-master
 }
-gitcheckout() {
+gitselectbranch() {
     branches=`git branch | grep -v "^*" | grep -i $1`
     numBranches=`echo $branches | wc -w | awk '{print $1}'`
 
@@ -41,8 +41,16 @@ gitcheckout() {
 	branches=`echo $branches | grep -i $newFilter`
 	numBranches=`echo $branches | wc -w | awk '{print $1}'`
     done
-    
+}
+gitcheckout() {
+    gitselectbranch $1
     echo $branches | xargs git checkout
+}
+copycase() {
+    curBranch=$(git curbranch)
+    newBranchName="${curBranch}_revised"
+    git checkout -b $newBranchName $curBranch
+    git branch $newBranchName -u dc-master/resolved
 }
 codeReviewCommits() {
     open $(git log --pretty=oneline dc-master/resolved.. | awk '{print $1}' | sed -E 's_(.+)_https://github.com/FishkinsDC/donorschoose-web/commit/\1_' | tee >(pbcopy))
