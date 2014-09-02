@@ -1,4 +1,4 @@
-personal_ws-1.1 en 964 
+personal_ws-1.1 en 978 
 getIndexHistorical
 refactor
 stats
@@ -45,14 +45,15 @@ fab
 groovy
 ChallengeDataAccessImpl
 AWS
+BRS
 EFF
 callbacks
 createAlerts
 dir
 nginx
 div
-ProposalPhoto
 proposalphoto
+ProposalPhoto
 cos
 CR'd
 unsubscribed
@@ -129,6 +130,7 @@ projectlist
 batchname
 catchup
 cancellable
+fussy
 handlebars
 dcteacher
 Jeana
@@ -229,6 +231,7 @@ popups
 ramen
 diff
 lucene
+millis
 dupes
 quickbooks
 OHH
@@ -309,8 +312,8 @@ stalkers
 tfa
 bitrate
 refs
-RabbitMQ
 rabbitmq
+RabbitMQ
 spellcheck
 phototype
 widenDepth
@@ -342,8 +345,8 @@ fileupload
 SSO
 ProposalPointsManagerImpl
 SecondWarning
-SendGrid
 sendgrid
+SendGrid
 challengeNameDisplay
 pref
 STS
@@ -368,6 +371,7 @@ larges
 Ruscetta
 convo
 elem
+toHash
 webpage
 postClean
 uri
@@ -391,10 +395,12 @@ listFilesCommand
 rethrown
 indemnification
 secs
+escapeQuery
 paymentvo
 UserManagerImpl
 donormetrics
 geotargeted
+RollbackException
 params
 APPNAME
 ehcache
@@ -451,8 +457,8 @@ leaderboardcategoryid
 haha
 FF
 zakas
-gc
 dr
+gc
 disciplineList
 fi
 du
@@ -468,8 +474,8 @@ ie
 GP
 hl
 refactored
-gt
 FY
+gt
 socialnetwork
 rabbitmqadmin
 io
@@ -487,9 +493,9 @@ storagepath
 esac
 ls
 mq
-lz
-ok
 qa
+ok
+lz
 mv
 XDELETE
 subdirs
@@ -501,11 +507,11 @@ PR
 lookupManager
 SF
 setComment
-pw
-rm
 sh
-qs
+rm
+pw
 px
+qs
 SL
 HDDs
 foodtown
@@ -515,8 +521,8 @@ sr
 UI
 entrepreneurial
 su
-wc
 tr
+wc
 un
 emailing
 vm
@@ -572,16 +578,19 @@ internet
 thankyou
 exec
 lscache
+ProposalPricer
 crontab
 spec
 Dropkick
 uncomment
 updateIndex
+sendmail
 smtp
 gmail
 exif
 AFAIK
 Thur
+newSince
 nicholas
 trunc
 hostname
@@ -672,6 +681,7 @@ blockeddate
 prefs
 referenceData
 zipcode
+denormalizing
 launchctl
 uploader
 Trin
@@ -781,6 +791,7 @@ fubar
 DonorPhotoUploadController
 RemindLateConfirmFirstWarningEmailJob
 getState
+olderThan
 chown
 geodist
 deletedate
@@ -815,6 +826,7 @@ optimizations
 charles
 proposalFeedVOs
 jshint
+login
 stopwatch
 transitioning
 multi
@@ -835,6 +847,7 @@ Zach
 rollover
 perfdata
 Ming's
+Atlassian
 Maui
 recalcing
 mary
@@ -862,8 +875,8 @@ vsum
 preload
 dcadminuser
 NODENAME
-jMagick
 jmagick
+jMagick
 Demo'd
 spoof
 enrichment
@@ -873,8 +886,8 @@ numdonors
 donationoffset
 photocount
 donoraccount
-JSPs
 jsps
+JSPs
 loadResources
 getFullDefaultPhotoURL
 buildSystemComment
@@ -927,6 +940,7 @@ geocoding
 ack
 mins
 Nontheism
+missingpage
 searchable
 leaderboard
 hibernate
@@ -950,8 +964,8 @@ toLowerCase
 LZWM's
 mitsu
 djobname
-RabbitmqConsumer
 rabbitmqconsumer
+RabbitmqConsumer
 async
 photoaliasuser
 Cacheable

@@ -13,6 +13,9 @@ newcase() {
     branch_name=`echo $1 | sed "s/[ :\']\{1,\}/_/g"`
     git newcase $branch_name
 }
+casecommit() {
+    git commit -a -m "$(git curbranch| awk -F'_' '{print $1 ":" $2}') $1"
+}
 gitdiffclass() {
     git wdiff src/**/$1.java
 }
@@ -56,6 +59,7 @@ codeReviewCommits() {
     open $(git log --pretty=oneline dc-master/resolved.. | awk '{print $1}' | sed -E 's_(.+)_https://github.com/FishkinsDC/donorschoose-web/commit/\1_' | tee >(pbcopy))
 }
 gpushcurrresolved() {
+    sleep 1
     git push dc-master `git curbranch`:resolved
 }
 alias gpushcurr='git push origin `git curbranch`'
