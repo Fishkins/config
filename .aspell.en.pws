@@ -1,4 +1,4 @@
-personal_ws-1.1 en 980 
+personal_ws-1.1 en 981 
 getIndexHistorical
 refactor
 stats
@@ -44,16 +44,16 @@ AYF
 fab
 groovy
 ChallengeDataAccessImpl
-AWS
 BRS
+AWS
 EFF
 callbacks
 createAlerts
 dir
 nginx
 div
-proposalphoto
 ProposalPhoto
+proposalphoto
 cos
 CR'd
 unsubscribed
@@ -312,8 +312,8 @@ stalkers
 tfa
 bitrate
 refs
-rabbitmq
 RabbitMQ
+rabbitmq
 spellcheck
 phototype
 widenDepth
@@ -345,8 +345,8 @@ fileupload
 SSO
 ProposalPointsManagerImpl
 SecondWarning
-sendgrid
 SendGrid
+sendgrid
 challengeNameDisplay
 pref
 STS
@@ -457,8 +457,8 @@ leaderboardcategoryid
 haha
 FF
 zakas
-dr
 gc
+dr
 disciplineList
 fi
 du
@@ -474,8 +474,8 @@ ie
 GP
 hl
 refactored
-FY
 gt
+FY
 socialnetwork
 rabbitmqadmin
 io
@@ -493,9 +493,9 @@ storagepath
 esac
 ls
 mq
-qa
-ok
 lz
+ok
+qa
 mv
 XDELETE
 subdirs
@@ -507,11 +507,11 @@ PR
 lookupManager
 SF
 setComment
-sh
-rm
 pw
-px
+rm
+sh
 qs
+px
 SL
 HDDs
 foodtown
@@ -521,8 +521,8 @@ sr
 UI
 entrepreneurial
 su
-tr
 wc
+tr
 un
 emailing
 vm
@@ -589,8 +589,8 @@ smtp
 gmail
 exif
 AFAIK
-Thur
 newSince
+Thur
 nicholas
 trunc
 hostname
@@ -773,8 +773,8 @@ applicationContext
 StandardTeacherAlertService
 wiki
 webflows
-photonaminghelper
 PhotoNamingHelper
+photonaminghelper
 honorees
 cutover
 giftpurchases
@@ -860,6 +860,7 @@ UserManager
 ehcached
 findByNamedQuery
 mkdir
+Algolia
 wiki's
 JsonFeedController
 classpath
@@ -877,8 +878,8 @@ vsum
 preload
 dcadminuser
 NODENAME
-jmagick
 jMagick
+jmagick
 Demo'd
 spoof
 enrichment
@@ -888,8 +889,8 @@ numdonors
 donationoffset
 photocount
 donoraccount
-jsps
 JSPs
+jsps
 loadResources
 getFullDefaultPhotoURL
 buildSystemComment
@@ -966,8 +967,8 @@ toLowerCase
 LZWM's
 mitsu
 djobname
-rabbitmqconsumer
 RabbitmqConsumer
+rabbitmqconsumer
 async
 photoaliasuser
 Cacheable
@@ -979,3 +980,4 @@ diffing
 unsubscribe
 zoneid
 CDN
+stylesheet

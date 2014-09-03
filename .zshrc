@@ -10,7 +10,7 @@ setopt completeinword
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 autoload zmv
 newcase() {
-    branch_name=`echo $1 | sed "s/[ :\']\{1,\}/_/g"`
+    branch_name=$(echo $1 | sed "s/[ :\']\{1,\}/_/g")
     git newcase $branch_name
 }
 casecommit() {
@@ -26,23 +26,23 @@ gitrebaseresolved() {
     git pull --rebase dc-master
 }
 gitselectbranch() {
-    branches=`git branch | grep -v "^*" | grep -i $1`
-    numBranches=`echo $branches | wc -w | awk '{print $1}'`
+    branches=$(git branch | grep -v "^*" | grep -i $1)
+    numBranches=$(echo $branches | wc -w | awk '{print $1}')
 
     while [ ! $numBranches -eq 1 ]
     do
 	if [ $numBranches -eq 0 ]
 	then
 	    echo "No such branch. Choose one of these branches."
-	    branches=`git branch | grep -v "^*"`
+	    branches=$(git branch | grep -v "^*")
 	else
 	    echo "Multiple matches. Add another filter."
 	fi
 
 	echo $branches
 	read newFilter
-	branches=`echo $branches | grep -i $newFilter`
-	numBranches=`echo $branches | wc -w | awk '{print $1}'`
+	branches=$(echo $branches | grep -i $newFilter)
+	numBranches=$(echo $branches | wc -w | awk '{print $1}')
     done
 }
 gitcheckout() {
@@ -59,10 +59,13 @@ codeReviewCommits() {
     open $(git log --pretty=oneline dc-master/resolved.. | awk '{print $1}' | sed -E 's_(.+)_https://github.com/FishkinsDC/donorschoose-web/commit/\1_' | tee >(pbcopy))
 }
 gpushcurrresolved() {
-    sleep 1
-    git push dc-master `git curbranch`:resolved
+    echo "Are you sure? (y/n)"
+    read confirmation
+    if [ "$confirmation" = "y" ]; then
+        git push dc-master $(git curbranch):resolved
+    fi
 }
-alias gpushcurr='git push origin `git curbranch`'
+alias gpushcurr='git push origin $(git curbranch)'
 alias psgrep='ps -ef | head -1;ps -ef | grep -v grep | egrep -i'
 alias ll='ls -l'
 alias la='ls -a'
