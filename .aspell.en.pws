@@ -1,4 +1,4 @@
-personal_ws-1.1 en 978 
+personal_ws-1.1 en 980 
 getIndexHistorical
 refactor
 stats
@@ -603,6 +603,7 @@ processLate
 javadoc
 Litle
 breadcrumb
+sync'd
 fishkins
 logfile
 FeedbackType
@@ -740,6 +741,7 @@ DonorUpCont
 chmod
 tomcat
 xargs
+Jira
 schow
 getProposalWorkflowStatuses
 wildcard

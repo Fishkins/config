@@ -128,7 +128,18 @@
 
 ;; Completes an item and moves it under completed heading if it exists
 (fset 'myorg-complete
-      (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([109 121 3 20 M-right tab 100 100 103 103 112 107 tab 39 121] 0 "%d")) arg)))
+      (lambda (&optional arg)
+        (interactive "p")
+        (org-todo)
+        (org-demote-subtree)
+        (org-cut-subtree)
+        (beginning-of-buffer)
+        (org-cycle)
+        (next-line)
+        (org-paste-subtree)
+        (previous-line)
+        (org-shifttab)
+        (evil-jump-backward)))
 
 (add-hook 'org-mode-hook
           (lambda ()
