@@ -140,10 +140,10 @@
   "k" 'kill-this-buffer
   "40" 'kill-buffer-and-window
   "0" 'delete-window
-  "b" 'switch-to-buffer
+  "b" 'helm-mini
   "w" 'save-buffer
   "e" 'find-file
-  "f" 'find-file
+  "f" 'helm-find-files
   "o" 'other-window
   "ii" 'ispell
   "iw" 'flyspell-check-previous-highlighted-word
@@ -254,7 +254,10 @@
 ;; Reopen files on restart
 (desktop-save-mode 1)
 
-;; Helm config (like Goto Anything)
+;; Helm config
+(global-set-key (kbd "M-x") 'helm-M-x) 
+
+;; like Goto Anything
 (eval-after-load "helm-regexp"
   '(helm-attrset 'follow 1 helm-source-moccur))
 
