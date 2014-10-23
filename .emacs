@@ -38,7 +38,7 @@
  '(auto-save-file-name-transforms (quote ((".*" "~/.emacs.d/autosaves/\\1" t))))
  '(backup-directory-alist (quote ((".*" . "~/.emacs.d/backups/"))))
  '(custom-safe-themes (quote ("4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" default)))
- '(org-agenda-files (quote ("~/org/.staffperformance.org" "~/org/after.org" "~/org/atlassian.org" "~/org/before.org" "~/org/devnotes.org" "~/org/emails.org" "~/org/interviews.org" "~/org/partnerpage.org" "~/org/programmingresearch.org" "~/org/proposalPerf.org" "~/org/queueingsetup.org" "~/org/review.org" "~/org/scrum.org" "~/org/searchpage.org" "~/org/staffnotes.org" "~/org/systems.org" "~/org/tasks.org" "~/org/techupgrades.org" "~/org/uploads.org" "~/org/vacation.org")))
+ '(org-agenda-files (quote ("~/org/.staffperformance.org" "~/org/devnotes.org" "~/org/interviews.org" "~/org/programmingresearch.org" "~/org/queueingsetup.org" "~/org/review.org" "~/org/scrum.org" "~/org/searchpage.org" "~/org/systems.org" "~/org/tasks.org" "~/org/techupgrades.org" "~/org/uploads.org" "~/org/vacation.org")))
  '(vc-follow-symlinks t)
  '(visible-bell nil))
 
@@ -195,6 +195,7 @@
   "gO" '(lambda () (interactive) (evil-org-before 'org-insert-heading))
   "go" '(lambda () (interactive) (evil-org-after 'org-insert-heading))
   "gl" 'org-open-at-point
+  "gc" 'org-table-iterate
   )
 
 (add-hook 'emacs-lisp-mode-hook (lambda () (paredit-mode 1)))

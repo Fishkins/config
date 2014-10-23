@@ -1,3 +1,4 @@
+fpath=(/usr/local/share/zsh-completions $fpath)
 PROMPT='$ '
 settitle() { printf "\e]0;$@\a" }
 dir_in_title() { settitle $PWD }
@@ -77,7 +78,23 @@ alias gfm='git fetch dc-master'
 alias codeReview='open $(echo "https://github.com/FishkinsDC/donorschoose-web/compare/DonorsChoose:resolved...$(git curbranch)?expand=1&w=1" | tee >(pbcopy))'
 alias syncMusic='rsync -r --delete /Users/fishkins/Music/iTunes/iTunes\ Media/Music/ /Volumes/FISHKINS/Music'
 alias reloadConfig='pushd ~; source .zshrc; popd;'
-alias killMicrosoftDaemons="while true; do kill $(ps -ef | grep -v grep | egrep -i "(syncservicesag|database)" | awk '{print $2}'); done"
+alias killMicrosoftDaemons="while true; do kill $(ps -ef | grep -v grep | egrep -i "(syncservicesag|database)" | awk '{print $2}'); sleep .1; done"
+alias cdg='cd ~/git/donorschoose-web/web'
+alias dblocal='psql -h localhost -d dc_dev -U dcs'
+alias dbquery='psql -h data-query.donorschoose.org -d dc_prod -U chris'
+dbqa() {
+    if [ -z $1 ]; then
+        local db=dc_qa1
+    else
+        local db=$1
+    fi
+    if [ -z $2 ]; then
+        local user=chris
+    else
+        local user=$2
+    fi
+    psql -h qadb1.donorschoose.org -d $db -U $user $3
+}
 HISTFILE=~/.zhistory
 HISTSIZE=SAVEHIST=10000
 setopt incappendhistory 
