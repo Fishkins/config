@@ -11,11 +11,11 @@ setopt completeinword
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 autoload zmv
 newcase() {
-    branch_name=$(echo $1 | sed "s/[ :\']\{1,\}/_/g")
+    branch_name=$(echo $1 | sed "s/[ :\']\{1,\}/-/g")
     git newcase $branch_name
 }
 casecommit() {
-    git commit -a -m "$(git curbranch| awk -F'_' '{print $1 ":" $2}') $1"
+    git commit -a -m "$(git curbranch| awk -F'-' '{print $1 "-" $2}') $1"
 }
 gitdiffclass() {
     git wdiff src/**/$1.java

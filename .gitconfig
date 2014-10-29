@@ -23,7 +23,7 @@
     stat = "status -s"
     curbranch = "rev-parse --abbrev-ref HEAD"
     fetchone = "!f() { git fetch $1 $2:refs/remotes/$1/$2; }; f"
-    newcase = "!f() { git fetch dc-master; git checkout -b BUGZID_$1 dc-master/resolved; }; f"
+    newcase = "!f() { git fetch dc-master; git checkout -b $1 dc-master/resolved; }; f"
     logp = "log -w -p --follow"
     fix = "commit -a -m 'fixup'"
     amend = "commit --amend --no-edit -a"
