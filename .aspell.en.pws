@@ -1,6 +1,7 @@
-personal_ws-1.1 en 1143 
+personal_ws-1.1 en 1171 
 getIndexHistorical
 bio
+intellij
 refactor
 stats
 markPhotoUploadError
@@ -46,6 +47,7 @@ bot
 dev
 MacKaye
 statechange
+lightboxes
 KnowHow
 OpenVPN
 awk
@@ -81,6 +83,7 @@ checkbox
 CRs
 FGC
 css
+Nancy's
 UserDataAccess
 CSV
 gcc
@@ -145,6 +148,7 @@ foglyn
 donorschoose
 javax
 cognito
+lincoln
 laptops
 ids
 IDs
@@ -170,6 +174,8 @@ Jeana
 hoc
 pushd
 gte
+harriet
+JDK
 copyconfig
 CopyConfig
 args
@@ -198,7 +204,9 @@ Jazzpunk
 Murphys
 IRA
 plugin
+shards
 Kev
+autowarming
 findProposalMessagesByIds
 lat
 JPMorgan
@@ -264,6 +272,7 @@ imagemagick
 hadeishi
 nfs
 mmi
+propertychange
 getFacetList
 obs
 devs
@@ -307,6 +316,7 @@ OOM
 approvedBefore
 intraday
 num
+onpropertychange
 cartDonationMessage
 regexp
 org
@@ -402,8 +412,8 @@ sql
 var
 CTEs
 TOC
-getCurrencyInstance
 reinitializeSolr
+getCurrencyInstance
 getProposalMessages
 tmp
 jenkins
@@ -415,6 +425,7 @@ SSO
 ProposalPointsManagerImpl
 SecondWarning
 challengetypes
+UIs
 sendgrid
 SendGrid
 challengeNameDisplay
@@ -547,6 +558,7 @@ fi
 GiftCodeChallengeHibernateRepository
 FK
 du
+GF
 maxresults
 fl
 eq
@@ -569,6 +581,7 @@ rabbitmqadmin
 io
 enum
 vhosts
+tubman
 lg
 overfunded
 li
@@ -586,6 +599,7 @@ mq
 lz
 ok
 qa
+pf
 mv
 XDELETE
 qf
@@ -598,6 +612,7 @@ PR
 runtime
 lookupManager
 SF
+rollback
 setComment
 pw
 rm
@@ -632,8 +647,8 @@ emailed
 bippy
 studentsoffset
 temp
-CRing
 WS
+CRing
 reconfirmation
 teachforamerica
 haproxy
@@ -650,6 +665,7 @@ logStringTail
 ProposalDetailController
 LARPing
 Elaine's
+addressWizard
 asFormattedString
 leaderboardcategory
 Quora
@@ -715,6 +731,7 @@ logfile
 FeedbackType
 enamored
 DonorPhotoCropController
+beforeclose
 fbsso
 registries
 determineStaleDismissals
@@ -750,6 +767,7 @@ SSHs
 grep
 TODO
 Salesforce
+deploySolr
 reattach
 sharebar
 omitNorms
@@ -828,8 +846,10 @@ chicago
 externalized
 getArgs
 photospublished
+cityname
 httpclient
 PhotoDWRWebService
+multicore
 uniq
 Frontend
 memoriam
@@ -902,6 +922,7 @@ makeOnProcessingSuccessCallback
 dismissible
 urgency
 http
+screeners
 leaderboardchallenge
 applicationContext
 StandardTeacherAlertService
@@ -925,6 +946,7 @@ deliminated
 hostnames
 ctrlp
 Flobots
+findSchoolForm
 fubar
 DonorPhotoUploadController
 RemindLateConfirmFirstWarningEmailJob
@@ -959,6 +981,7 @@ jobname
 mostrecentdonation
 akamai
 programmatically
+prefetched
 timestamps
 rabbitmqctl
 unencoded
@@ -987,6 +1010,7 @@ barkley
 logon
 costToComplete
 https
+abraham
 logos
 Zach
 rollover
@@ -1041,6 +1065,7 @@ photocount
 donoraccount
 JSPs
 jsps
+Hallowe'en
 loadResources
 getFullDefaultPhotoURL
 buildSystemComment
@@ -1064,6 +1089,7 @@ DonorCropCont
 UserDataAccessImpl
 admins
 geofilt
+mockup
 crowdsourced
 decrypt
 campaignid
@@ -1082,6 +1108,7 @@ pushState
 Tollbooth
 postMessageListener
 pooledDataSource
+statecode
 keychain
 AlertDismissal
 persistance
@@ -1114,6 +1141,7 @@ codebase
 agg
 bcc
 userId
+parochial
 metadata
 servlet
 signin

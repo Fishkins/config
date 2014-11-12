@@ -71,9 +71,10 @@
        (if (y-or-n-p (format "Package %s is missing. Install it? " package))
            (package-install package))))
  '(
-   ac-nrepl
    auto-complete
+   cider
    clojure-mode
+   company
    erlang
    evil
    evil-numbers
@@ -83,7 +84,6 @@
    haskell-mode
    helm
    magit
-   nrepl
    org
    paredit
    popup
@@ -95,6 +95,8 @@
    sr-speedbar
    ace-jump-mode
    linum-relative
+   projectile
+   helm-projectile
    ))
 
 ;; SQL mode config
@@ -145,9 +147,9 @@
   "k" 'kill-this-buffer
   "40" 'kill-buffer-and-window
   "0" 'delete-window
-  "b" 'switch-to-buffer
+  "b" 'helm-mini
   "w" 'save-buffer
-  "e" 'find-file
+  "e" 'helm-find-files
   "f" 'find-file
   "o" 'other-window
   "ii" 'ispell
@@ -216,8 +218,31 @@
 	(lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([71 63 41 13 97 3 5 escape] 0 "%d")) arg))))
 (add-hook 'clojure-mode-hook 'add-clojure-eval-fn)
 (add-hook 'clojure-mode-hook (lambda () (paredit-mode 1)))
-(add-hook 'clojure-mode-hook (lambda () (auto-complete-mode 1)))
+;; (add-hook 'clojure-mode-hook (lambda () (auto-complete-mode 1)))
 
+;; cider config
+(add-hook 'cider-repl-mode-hook 'company-mode)
+(add-hook 'cider-mode-hook 'company-mode)
+
+(add-to-list 'exec-path "/usr/local/bin")
+
+;; (require 'ac-nrepl)
+;; (add-hook 'nrepl-mode-hook 'ac-nrepl-setup)
+;; (add-hook 'nrepl-interaction-mode-hook 'ac-nrepl-setup)
+;; (eval-after-load "auto-complete"
+;;   '(add-to-list 'ac-modes 'nrepl-mode))
+;; (setq ac-auto-start nil)
+;; (ac-set-trigger-key "TAB")
+
+;; (add-hook 'nrepl-mode-hook (lambda () (auto-complete-mode 1)))
+
+;; (defun set-auto-complete-as-completion-at-point-function ()
+;;   (setq completion-at-point-functions '(auto-complete)))
+;; (add-hook 'auto-complete-mode-hook 'set-auto-complete-as-completion-at-point-function)
+;; (add-hook 'nrepl-mode-hook 'set-auto-complete-as-completion-at-point-function)
+;; (add-hook 'nrepl-interaction-mode-hook 'set-auto-complete-as-completion-at-point-function)
+
+;; Disable evil in certain buffers
 (add-hook 'shell-mode-hook (lambda () (evil-local-mode 0)))
 (add-hook 'artist-mode-hook (lambda () (evil-local-mode 0)))
 
@@ -228,23 +253,6 @@
 (setq ispell-list-command "list")
 
 (setq markdown-command "/usr/local/bin/markdown")
-
-(require 'ac-nrepl)
-(add-hook 'nrepl-mode-hook 'ac-nrepl-setup)
-(add-hook 'nrepl-interaction-mode-hook 'ac-nrepl-setup)
-(eval-after-load "auto-complete"
-  '(add-to-list 'ac-modes 'nrepl-mode))
-(setq ac-auto-start nil)
-(ac-set-trigger-key "TAB")
-
-(add-hook 'nrepl-mode-hook (lambda () (auto-complete-mode 1)))
-
-(defun set-auto-complete-as-completion-at-point-function ()
-  (setq completion-at-point-functions '(auto-complete)))
-(add-hook 'auto-complete-mode-hook 'set-auto-complete-as-completion-at-point-function)
-(add-hook 'nrepl-mode-hook 'set-auto-complete-as-completion-at-point-function)
-(add-hook 'nrepl-interaction-mode-hook 'set-auto-complete-as-completion-at-point-function)
-;; (define-key nrepl-interaction-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc)
 
 ;; End sentences with 1 space
 (setq sentence-end "[.?!][]\"')]*\\($\\|\t\\| \\)[ \t\n]*")
@@ -260,11 +268,16 @@
 (desktop-save-mode 1)
 
 ;; Helm config
-;;(global-set-key (kbd "M-x") 'helm-M-x) 
+(require 'helm-config)
+(helm-mode 1)
+(global-set-key (kbd "C-c h") 'helm-command-prefix)
+(global-unset-key (kbd "C-x c"))
 
-;; like Goto Anything
-(eval-after-load "helm-regexp"
-  '(helm-attrset 'follow 1 helm-source-moccur))
+(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to do persistent action
+(define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
+(define-key helm-map (kbd "C-q")  'helm-select-action) ; list actions using C-q
+	
+(global-set-key (kbd "M-x") 'helm-M-x) 
 
 (defun my-helm-multi-all ()
   "multi-occur in all buffers backed by files."

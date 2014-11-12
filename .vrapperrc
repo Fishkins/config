@@ -1,6 +1,5 @@
 set autoindent
 set ignorecase
 set smartcase
-set saney
 set clipboard=unnamed
-
+:map Y y$
