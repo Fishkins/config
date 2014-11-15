@@ -108,6 +108,7 @@
 (add-to-list 'auto-mode-alist '("\\.json$" . javascript-mode))
 (add-to-list 'auto-mode-alist '("\\.jsp$" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.(rdf|xul)$" . xml-mode))
+(add-to-list 'auto-mode-alist '("emacs" . emacs-lisp-mode))
 
 ;; Set up org mode
 (add-hook 'org-mode-hook 'visual-line-mode)
@@ -224,7 +225,7 @@
 (add-hook 'cider-repl-mode-hook 'company-mode)
 (add-hook 'cider-mode-hook 'company-mode)
 
-(add-to-list 'exec-path "/usr/local/bin")
+(setq cider-lein-command "/usr/local/bin/lein")
 
 ;; (require 'ac-nrepl)
 ;; (add-hook 'nrepl-mode-hook 'ac-nrepl-setup)
