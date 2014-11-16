@@ -207,6 +207,8 @@
   )
 
 (add-hook 'emacs-lisp-mode-hook (lambda () (paredit-mode 1)))
+(add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
 
 ;; More vi hotkeys
 (setq key-chord-two-keys-delay 0.5)
@@ -326,3 +328,11 @@
 
 (require 'linum-relative)
 (linum-on)
+
+(defun replace-last-sexp ()
+    (interactive)
+    (let ((value (eval (preceding-sexp))))
+      (kill-sexp -1)
+      (insert (format "%S" value))))
+
+(define-key global-map (kbd "C-c e") 'replace-last-sexp)
