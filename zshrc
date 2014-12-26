@@ -1,3 +1,4 @@
+export PATH=/usr/local/bin:$PATH:$HOME/.rvm/bin:/usr/local/sbin:/usr/local/opt/ruby/bin
 fpath=(/usr/local/share/zsh-completions $fpath)
 PROMPT='$ '
 settitle() { printf "\e]0;$@\a" }
@@ -14,8 +15,12 @@ newcase() {
     branch_name=$(echo $1 | sed "s/[ :\']\{1,\}/-/g")
     git newcase $branch_name
 }
+setupstream() {
+    git branch --set-upstream-to=dc-master/resolved
+    gitrebaseresolved
+}
 casecommit() {
-    git commit -a -m "$(git curbranch| awk -F'-' '{print $1 "-" $2}') $1"
+    git commit -a -m "$(git curbranch| awk -F'-' '{print $1 "-" $2}') $*"
 }
 gitdiffclass() {
     git wdiff src/**/$1.java
@@ -80,6 +85,7 @@ alias syncMusic='rsync -r --delete /Users/fishkins/Music/iTunes/iTunes\ Media/Mu
 alias reloadConfig='pushd ~; source .zshrc; popd;'
 alias killMicrosoftDaemons="while true; do kill $(ps -ef | grep -v grep | egrep -i "(syncservicesag|database)" | awk '{print $2}'); sleep .1; done"
 alias cdg='cd ~/git/donorschoose-web/web'
+alias noelcopy="tr -d '\n' | pbcopy"
 alias dblocal='psql -h localhost -d dc_dev -U dcs'
 alias dbquery='psql -h data-query.donorschoose.org -d dc_prod -U chris'
 dbqa() {

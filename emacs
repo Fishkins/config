@@ -109,6 +109,7 @@
 (add-to-list 'auto-mode-alist '("\\.jsp$" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.(rdf|xul)$" . xml-mode))
 (add-to-list 'auto-mode-alist '("emacs" . emacs-lisp-mode))
+(add-to-list 'auto-mode-alist '("zshrc" . sh-mode))
 
 ;; Set up org mode
 (add-hook 'org-mode-hook 'visual-line-mode)
@@ -209,6 +210,8 @@
 (add-hook 'emacs-lisp-mode-hook (lambda () (paredit-mode 1)))
 (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
+
+(add-hook 'paredit-mode-hook 'evil-paredit-mode)
 
 ;; More vi hotkeys
 (setq key-chord-two-keys-delay 0.5)
