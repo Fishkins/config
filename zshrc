@@ -1,4 +1,5 @@
 export PATH=/usr/local/bin:$PATH:$HOME/.rvm/bin:/usr/local/sbin:/usr/local/opt/ruby/bin
+export PROPERTIES_DIR=local
 fpath=(/usr/local/share/zsh-completions $fpath)
 PROMPT='$ '
 settitle() { printf "\e]0;$@\a" }
