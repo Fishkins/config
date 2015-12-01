@@ -1,4 +1,4 @@
-export PATH=/usr/local/bin:$PATH:$HOME/.rvm/bin:/usr/local/sbin:/usr/local/opt/ruby/bin
+export PATH=/usr/local/bin:$PATH:$HOME/.rvm/bin:/usr/local/sbin:/usr/local/opt/ruby/bin:/Users/fishkins/Developer/usr/bin/postgresql-9.2.4/bin
 export PROPERTIES_DIR=local
 fpath=(/usr/local/share/zsh-completions $fpath)
 PROMPT='$ '
@@ -71,6 +71,16 @@ gpushcurrresolved() {
     if [ "$confirmation" = "y" ]; then
         git push dc-master $(git curbranch):resolved
     fi
+}
+gpushcurrcandidate() {
+    echo "Are you sure? (y/n)"
+    read confirmation
+    if [ "$confirmation" = "y" ]; then
+        git push dc-master $(git curbranch):release_candidate
+    fi
+}
+gpushcurrvds() {
+    git push dc-master $(git curbranch):WS-19808_TEST-VDS
 }
 alias gpushcurr='git push origin $(git curbranch)'
 alias psgrep='ps -ef | head -1;ps -ef | grep -v grep | egrep -i'

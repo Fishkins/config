@@ -136,10 +136,21 @@
         (org-shifttab)
         (evil-jump-backward)))
 
+(fset 'myorg-insert-src-tag
+      (lambda (&optional arg) "Keyboard macro."
+        (interactive "p")
+        (insert "#+BEGIN_SRC ")
+        (org-return)
+        (insert "#+END_SRC")
+        (evil-previous-line)
+        (evil-append-line 1)
+        ))
+
 (add-hook 'org-mode-hook
           (lambda ()
             (define-key org-mode-map (kbd "RET") 'org-return-indent)
-            (define-key org-mode-map "\C-ct" 'myorg-complete)))
+            (define-key org-mode-map "\C-ct" 'myorg-complete)
+            (define-key org-mode-map "\C-cs" 'myorg-insert-src-tag)))
 
 ;; vi hotkeys
 (require 'evil-leader)
@@ -208,6 +219,7 @@
   "gc" 'org-table-iterate
   "gn" 'outline-next-visible-heading
   "gp" 'outline-previous-visible-heading
+  "gs" 'myorg-insert-src-tag
   )
 
 (add-hook 'emacs-lisp-mode-hook (lambda () (paredit-mode 1)))
@@ -224,7 +236,7 @@
 ;; Custom macro to eval clojure fn in nrepl
 (defun add-clojure-eval-fn ()
   (fset 'mycloj-eval-fun
-	(lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([71 63 41 13 97 3 5 escape] 0 "%d")) arg))))
+        (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([71 63 41 13 97 3 5 escape] 0 "%d")) arg))))
 (add-hook 'clojure-mode-hook 'add-clojure-eval-fn)
 (add-hook 'clojure-mode-hook (lambda () (paredit-mode 1)))
 ;; (add-hook 'clojure-mode-hook (lambda () (auto-complete-mode 1)))
@@ -285,7 +297,7 @@
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to do persistent action
 (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
 (define-key helm-map (kbd "C-q")  'helm-select-action) ; list actions using C-q
-	
+
 (global-set-key (kbd "M-x") 'helm-M-x) 
 
 (defun my-helm-multi-all ()
@@ -336,9 +348,9 @@
 (linum-on)
 
 (defun replace-last-sexp ()
-    (interactive)
-    (let ((value (eval (preceding-sexp))))
-      (kill-sexp -1)
-      (insert (format "%S" value))))
+  (interactive)
+  (let ((value (eval (preceding-sexp))))
+    (kill-sexp -1)
+    (insert (format "%S" value))))
 
 (define-key global-map (kbd "C-c e") 'replace-last-sexp)
