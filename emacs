@@ -40,6 +40,7 @@
  '(custom-safe-themes
    (quote
     ("4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" default)))
+ '(tab-width 4)
  '(vc-follow-symlinks t)
  '(visible-bell nil))
 
@@ -125,6 +126,7 @@
 (fset 'myorg-complete
       (lambda (&optional arg)
         (interactive "p")
+        (evil-set-marker ?z)
         (org-todo)
         (org-demote-subtree)
         (org-cut-subtree)
@@ -134,7 +136,7 @@
         (org-paste-subtree)
         (previous-line)
         (org-shifttab)
-        (evil-jump-backward)))
+        (evil-goto-mark ?z)))
 
 (fset 'myorg-insert-src-tag
       (lambda (&optional arg) "Keyboard macro."
@@ -164,7 +166,7 @@
   "b" 'helm-mini
   "w" 'save-buffer
   "e" 'helm-find-files
-  "f" 'find-file
+  "f" 'helm-find-files
   "o" 'other-window
   "ii" 'ispell
   "iw" 'flyspell-check-previous-highlighted-word

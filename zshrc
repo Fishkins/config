@@ -95,13 +95,14 @@ alias codeReview='open $(echo "https://github.com/FishkinsDC/donorschoose-web/co
 alias syncMusic='rsync -r --delete /Users/fishkins/Music/iTunes/iTunes\ Media/Music/ /Volumes/FISHKINS/Music'
 alias reloadConfig='pushd ~; source .zshrc; popd;'
 alias killMicrosoftDaemons="while true; do kill $(ps -ef | grep -v grep | egrep -i "(syncservicesag|database)" | awk '{print $2}'); sleep .1; done"
+alias killFswatch="ps -ef | grep fswatch | grep -v grep | awk '{print $2}' | xargs kill"
 alias cdg='cd ~/git/donorschoose-web/web'
 alias noelcopy="tr -d '\n' | pbcopy"
-alias dblocal='psql -h localhost -d dc_dev -U dcs'
+alias dblocal='pgcli postgres://dcs@localhost:5432/dc_dev'
 alias dbquery='psql -h data-query.donorschoose.org -d dc_prod -U chris'
 dbqa() {
     if [ -z $1 ]; then
-        local db=dc_qa1
+        local db=dc_qa0
     else
         local db=$1
     fi
@@ -110,7 +111,7 @@ dbqa() {
     else
         local user=$2
     fi
-    psql -h qadb1.donorschoose.org -d $db -U $user $3
+    pgcli "postgres://${user}@test-data.donorschoose.org:5432/${db}"
 }
 HISTFILE=~/.zhistory
 HISTSIZE=SAVEHIST=10000
