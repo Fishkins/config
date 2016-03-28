@@ -98,7 +98,7 @@ alias killMicrosoftDaemons="while true; do kill $(ps -ef | grep -v grep | egrep 
 alias killFswatch="ps -ef | grep fswatch | grep -v grep | awk '{print $2}' | xargs kill"
 alias cdg='cd ~/git/donorschoose-web/web'
 alias noelcopy="tr -d '\n' | pbcopy"
-alias dblocal='pgcli postgres://dcs@localhost:5432/dc_dev'
+alias dblocal='psql -h localhost -d dc_dev -U dcs'
 alias dbquery='psql -h data-query.donorschoose.org -d dc_prod -U chris'
 dbqa() {
     if [ -z $1 ]; then
@@ -111,7 +111,7 @@ dbqa() {
     else
         local user=$2
     fi
-    pgcli "postgres://${user}@test-data.donorschoose.org:5432/${db}"
+    psql -h test-data.donorschoose.org -d $db -U $user $3
 }
 HISTFILE=~/.zhistory
 HISTSIZE=SAVEHIST=10000

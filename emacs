@@ -42,6 +42,7 @@
     ("4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" default)))
  '(tab-width 4)
  '(vc-follow-symlinks t)
+ '(vcl-indent-tabs-mode t)
  '(visible-bell nil))
 
 ;; create the autosave dir if necessary, since emacs won't.
@@ -356,3 +357,7 @@
     (insert (format "%S" value))))
 
 (define-key global-map (kbd "C-c e") 'replace-last-sexp)
+
+;; VCL mode
+
+(setq vcl-indent-level 4)
