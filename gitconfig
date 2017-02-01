@@ -3,7 +3,7 @@
     autocrlf = input
     editor = vim
 [user]
-    name = chris-donorschoose
+	name = Chris Fishkins
     email = chris@donorschoose.org
 [difftool]
     prompt = false
@@ -25,7 +25,7 @@
     fetchone = "!f() { git fetch $1 $2:refs/remotes/$1/$2; }; f"
     newcase = "!f() { git fetch dc-master; git checkout -b $1 dc-master/resolved; }; f"
     logp = "log -w -p --follow"
-    fix = "commit -a -m 'fixup'"
+    fix = "!f() { git commit -a --fixup \"$1\"; }; f"
     amend = "commit --amend --no-edit -a"
     sho = "show -w"
 [color]

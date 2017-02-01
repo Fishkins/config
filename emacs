@@ -2,10 +2,12 @@
 (setq ns-command-modifier 'meta)
 ;; No start-up screen
 (setq inhibit-startup-screen t)
-;; Use spaces instead of tab chars, make tabs 4 spaces
+;; Make tabs 4 spaces
 (setq tab-width 4)
+(defvaralias 'c-basic-offset 'tab-width)
+(defvaralias 'cperl-indent-level 'tab-width)
+(defvaralias 'nxml-child-indent 'tab-width)
 (setq c-basic-indent 4)
-(setq-default indent-tabs-mode nil)
 ;; Never require typing full yes or no
 (fset 'yes-or-no-p 'y-or-n-p)
 ;; Highlight matching parens
@@ -106,7 +108,9 @@
 (add-hook 'sql-mode-hook 'sql-highlight-postgres-keywords)
 (add-hook 'sql-interactive-mode-hook (lambda () (setq truncate-lines t)))
 
+;; tramp mode config
 (setq tramp-default-method "ssh")
+;; chris@test-search1.donorschoose.org:/var/log/solr/solr.out
 
 (add-to-list 'auto-mode-alist '("\\.json$" . javascript-mode))
 (add-to-list 'auto-mode-alist '("\\.jsp$" . html-mode))
@@ -190,8 +194,6 @@
 ;; (define-key minibuffer-local-completion-map (kbd "C-[") 'keyboard-escape-quit)
 ;; (define-key minibuffer-local-must-match-map (kbd "C-[") 'keyboard-escape-quit)
 ;; (define-key minibuffer-local-isearch-map (kbd "C-[") 'keyboard-escape-quit)
-(global-set-key (kbd "C-c +") 'evil-numbers/inc-at-pt)
-(global-set-key (kbd "C-c -") 'evil-numbers/dec-at-pt)
 
 (setq evil-esc-delay 0)
 
@@ -223,6 +225,8 @@
   "gn" 'outline-next-visible-heading
   "gp" 'outline-previous-visible-heading
   "gs" 'myorg-insert-src-tag
+  "g=" 'evil-numbers/inc-at-pt
+  "g-" 'evil-numbers/dec-at-pt
   )
 
 (add-hook 'emacs-lisp-mode-hook (lambda () (paredit-mode 1)))
@@ -359,5 +363,5 @@
 (define-key global-map (kbd "C-c e") 'replace-last-sexp)
 
 ;; VCL mode
-
+(add-to-list 'auto-mode-alist '("\\.vcl" . vcl-mode))
 (setq vcl-indent-level 4)

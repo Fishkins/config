@@ -1,4 +1,4 @@
-export PATH=/usr/local/bin:$PATH:$HOME/.rvm/bin:/usr/local/sbin:/usr/local/opt/ruby/bin:/Users/fishkins/Developer/usr/bin/postgresql-9.2.4/bin
+export PATH=/usr/local/bin:$PATH:$HOME/.rvm/bin:/usr/local/sbin:/usr/local/opt/ruby/bin:/Users/fishkins/Developer/usr/bin/postgresql-9.2.4/bin:/usr/local/Cellar/blackbox/1.20160122/bin
 export PROPERTIES_DIR=local
 fpath=(/usr/local/share/zsh-completions $fpath)
 PROMPT='$ '
@@ -99,7 +99,7 @@ alias killFswatch="ps -ef | grep fswatch | grep -v grep | awk '{print $2}' | xar
 alias cdg='cd ~/git/donorschoose-web/web'
 alias noelcopy="tr -d '\n' | pbcopy"
 alias dblocal='psql -h localhost -d dc_dev -U dcs'
-alias dbquery='psql -h data-query.donorschoose.org -d dc_prod -U chris'
+alias dbquery='psql "host=prod-query.donorschoose.org dbname=dc_prod user=chris sslmode=require"'
 dbqa() {
     if [ -z $1 ]; then
         local db=dc_qa0
@@ -130,7 +130,7 @@ zle -N history-beginning-search-forward-end history-search-end
 bindkey "^p" history-beginning-search-backward-end
 bindkey "^n" history-beginning-search-forward-end
 
-source .zshrcpersonal
+source ~/.zshrcpersonal
 
 # Improve git file path completion speed
 __git_files () { 
