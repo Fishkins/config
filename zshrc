@@ -1,7 +1,5 @@
-export PATH=/usr/local/bin:$PATH:$HOME/.rvm/bin:/usr/local/sbin:/usr/local/opt/ruby/bin:/Users/fishkins/Developer/usr/bin/postgresql-9.2.4/bin:/usr/local/Cellar/blackbox/1.20160122/bin
-export PROPERTIES_DIR=local
-fpath=(/usr/local/share/zsh-completions $fpath)
 PROMPT='$ '
+fpath=(/usr/local/share/zsh-completions $fpath)
 settitle() { printf "\e]0;$@\a" }
 dir_in_title() { settitle $PWD }
 chpwd_functions=(dir_in_title)
