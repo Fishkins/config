@@ -1,4 +1,4 @@
-personal_ws-1.1 en 1712 
+personal_ws-1.1 en 1725 
 buildSystemComment
 getProposalToDonationsMap
 CDN
@@ -54,8 +54,8 @@ axl
 fab
 lockdown
 sortBy
-AWS
 BRS
+AWS
 algo
 toTest
 EFF
@@ -66,10 +66,10 @@ Isham
 div
 fam
 naseem
-BTS
-cos
-CR'd
 edx
+CR'd
+cos
+BTS
 disciplineList
 Udacity
 slowdown
@@ -85,12 +85,12 @@ GeoNames
 CRs
 enablePositionIncrements
 Betz
-DOM
 FGC
+DOM
 Kindler
 communitynames
-DNS
 css
+DNS
 Cate
 CSV
 gcc
@@ -138,6 +138,7 @@ proposalmanager
 TextField
 git
 DisciplineFocus
+IAM
 Ian
 secureCacheURL
 preload
@@ -149,8 +150,8 @@ fq's
 idk
 MeasuredSearch
 Zendesk
-ids
 IDs
+ids
 ext
 dbcp
 sysconfig
@@ -220,6 +221,7 @@ proposalindexview
 laptops
 pricer
 refactored
+Cloudbleed
 lil
 hoverable
 classpath
@@ -240,8 +242,8 @@ DDOS
 memoriam
 appConfiguration
 williams
-min
 KRS
+min
 mke
 donorid
 catalina
@@ -255,8 +257,8 @@ currentworkflowstatuscode
 NFP
 fearin
 nicholas
-nfs
 mmi
+nfs
 lincoln
 mmm
 onoff
@@ -269,17 +271,17 @@ Nhu
 newSince
 desi
 PBD
-mnt
 lst
+mnt
 MPM
 UserDataAccess
 edismax
 noResults
-NMH
 OHH
+NMH
 PCI
-pdf
 NLP
+pdf
 msg
 Edan
 Wordpress
@@ -300,6 +302,7 @@ nov
 AlertDismissal
 eraseCookie
 mixpanel
+PID
 QAs
 SQLite
 challengeProposals
@@ -326,8 +329,8 @@ ops
 Dima
 png
 joyner
-PoC
 NYC
+PoC
 hardbounce
 NYE
 ImmutableMap
@@ -337,8 +340,8 @@ REI
 districtname
 PQA
 hearin
-PPI
 RDS
+PPI
 freemium
 ppl
 ChallengeDataAccess
@@ -346,15 +349,15 @@ san
 apache
 numschools
 pre
-sed
 RJD
+sed
 yyyy
 hipchat
-SDK
 scp
+SDK
 oxm
-PRs
 RHS
+PRs
 enums
 conf
 TAF
@@ -373,12 +376,12 @@ cpio
 intellij
 Bryn
 updateFavoritesCookie
-pvo
 pty
+pvo
 EhCache
 ehcache
-tcp
 tfa
+tcp
 RMQ
 getNextSyntacticCharOffset
 ProposalType
@@ -408,6 +411,7 @@ var
 matchingcriteria
 VCL
 TOC
+webbridge
 TLS
 SQS
 tmp
@@ -457,6 +461,7 @@ FGCG
 levenshtein
 asFormattedString
 VPC
+crontabs
 VMs
 resizing
 Mann's
@@ -586,8 +591,8 @@ lz
 mv
 Browserify
 qf
-setFollowSubmitStyles
 rc
+setFollowSubmitStyles
 donoroffset
 jshint
 PR
@@ -655,8 +660,8 @@ myaccount
 Heems
 loadWithNewGlobal
 grantaccount
-ProposalPhoto
 proposalphoto
+ProposalPhoto
 codebase
 createAlerts
 passwordless
@@ -849,8 +854,8 @@ unencoded
 Ken's
 ToySearchController
 jslint
-HSTS
 ints
+HSTS
 baseURL
 cellpadding
 donoraccount
@@ -870,6 +875,7 @@ McTavish
 Ruscetta
 autocrop
 getFacet
+dockerhub
 socialnetwork
 airbnb
 workflow
@@ -961,6 +967,7 @@ varchar
 processProposalPhotos
 juli
 onclick
+entrypoint
 Minify
 phototype
 jmagick
@@ -1007,6 +1014,7 @@ mkdir
 Metagenda
 mini
 Wilco
+Logz
 refactoring
 mins
 wiki's
@@ -1080,8 +1088,8 @@ Femmes
 Pogues
 appuser
 PhotoDWRWebService
-tubman
 vhosts
+tubman
 donormmi
 getIndexHistorical
 architecting
@@ -1152,8 +1160,8 @@ booleans
 wishlist
 geotargeted
 ProposalPhotoHibernateRepository
-nginx
 Kweli
+nginx
 olds
 breadcrumbs
 perf
@@ -1263,6 +1271,7 @@ lemmatize
 repo
 sal's
 pref
+sbin
 campaignid
 Riak
 prev
@@ -1550,6 +1559,7 @@ processGeneralQueues
 compileJS
 CloudFlare
 WIFI
+salesforce
 Salesforce
 Skype
 challengemetrics
@@ -1629,12 +1639,14 @@ bankshot
 pooledDataSource
 debaser
 firstname
+HSTS's
 sonic
 solrj
 diffing
-Solr's
 Solrs
+Solr's
 vsum
+includeSubDomains
 jmeter
 challengetype
 Akamai's
@@ -1649,6 +1661,7 @@ pdumv
 honorees
 batchname
 Babs
+Sysdig
 Hodgman's
 convertProposalUpdateVOsToProposalFeedVOs
 getProposalWorkflowStatuses
@@ -1708,6 +1721,6 @@ colbert
 constructUrlAlias
 costToComplete
 beforeclose
-DCProposal
 dcproposal
+DCProposal
 unsubscribed

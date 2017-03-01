@@ -1,5 +1,5 @@
 PROMPT='$ '
-fpath=(/usr/local/share/zsh-completions $fpath)
+fpath=(/usr/local/share/zsh-completions ~/.zsh/completion $fpath)
 settitle() { printf "\e]0;$@\a" }
 dir_in_title() { settitle $PWD }
 chpwd_functions=(dir_in_title)
@@ -96,6 +96,7 @@ alias killMicrosoftDaemons="while true; do kill $(ps -ef | grep -v grep | egrep 
 alias killFswatch="ps -ef | grep fswatch | grep -v grep | awk '{print $2}' | xargs kill"
 alias cdg='cd ~/git/donorschoose-web/web'
 alias noelcopy="tr -d '\n' | pbcopy"
+alias en="emacsclient -n"
 alias dblocal='psql -h localhost -d dc_dev -U dcs'
 alias dbquery='psql "host=prod-query.donorschoose.org dbname=dc_prod user=chris sslmode=require"'
 dbqa() {
