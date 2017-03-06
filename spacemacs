@@ -433,6 +433,7 @@ you should place your code here."
 
   ;; ispell setup
   (setq ispell-silently-savep t)
+  (setq ispell-program-name "/usr/local/bin/aspell")
   (setq ispell-extra-args '("--sug-mode=ultra" "--ignore-case"))
   )
 
