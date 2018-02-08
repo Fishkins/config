@@ -10,6 +10,8 @@ compinit
 setopt completeinword
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 autoload zmv
+source /Users/fishkins/Library/Python/2.7/bin/aws_zsh_completer.sh
+source <(kubectl completion zsh)
 newcase() {
     branch_name=$(echo $1 | sed "s/[ :\']\{1,\}/-/g")
     git newcase $branch_name
@@ -19,7 +21,12 @@ setupstream() {
     gitrebaseresolved
 }
 casecommit() {
-    git commit -a -m "$(git curbranch| awk -F'-' '{print $1 "-" $2}') $*"
+    if [[ "$(git curbranch)" == WS* ]]
+    then
+       local CASE_ID="$(git curbranch | awk -F'-' '{print $1 "-" $2}') "
+    fi
+
+    git commit -a -m "${CASE_ID}$*"
 }
 gitdiffclass() {
     git wdiff src/**/$1.java
@@ -28,7 +35,7 @@ gitlogclass() {
     git logp src/**/$1.java
 }
 gitrebaseresolved() {
-    git pull --rebase dc-master
+    git pull --rebase
 }
 gitselectbranch() {
     branches=$(git branch | grep -v "^*" | grep -i $1)
@@ -70,15 +77,8 @@ gpushcurrresolved() {
         git push dc-master $(git curbranch):resolved
     fi
 }
-gpushcurrcandidate() {
-    echo "Are you sure? (y/n)"
-    read confirmation
-    if [ "$confirmation" = "y" ]; then
-        git push dc-master $(git curbranch):release_candidate
-    fi
-}
-gpushcurrvds() {
-    git push dc-master $(git curbranch):WS-19808_TEST-VDS
+gpushcurraws() {
+    git push dc-master $(git curbranch):dcpilot
 }
 alias gpushcurr='git push origin $(git curbranch)'
 alias psgrep='ps -ef | head -1;ps -ef | grep -v grep | egrep -i'
