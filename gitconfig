@@ -3,6 +3,7 @@
     autocrlf = input
     editor = vim
     ignorecase = true
+    excludesfile = /Users/fishkins/.gitignore_global
 [user]
 	name = Chris Fishkins
     email = chris@donorschoose.org
@@ -41,3 +42,7 @@
 	rebase = true
 [rebase]
 	autosquash = true
+[http]
+	postBuffer = 157286400
+[ssh]
+	postBuffer = 524288000
