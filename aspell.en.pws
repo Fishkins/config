@@ -1,4 +1,4 @@
-personal_ws-1.1 en 1815 
+personal_ws-1.1 en 1909 
 buildSystemComment
 getProposalToDonationsMap
 CDN
@@ -18,9 +18,11 @@ asc
 apr
 dbm
 vanityurl
+ASG
 dec
 virtualenv
 DBs
+XPUT
 laptop
 def
 ddl
@@ -49,7 +51,9 @@ Eau
 donationid
 BSG
 EBS
+CNI
 errored
+emptyDir
 AYF
 y'know
 axl
@@ -74,6 +78,7 @@ CR'd
 cos
 BTS
 disciplineList
+buildout
 Udacity
 EFS
 slowdown
@@ -90,8 +95,9 @@ GeoNames
 CRs
 enablePositionIncrements
 Betz
-FGC
+ELB
 DOM
+FGC
 Kindler
 communitynames
 css
@@ -106,6 +112,7 @@ gaq
 statename
 ANDs
 gci
+EKS
 persistance
 macinac
 GBs
@@ -113,6 +120,8 @@ Fivetran
 Emo
 website
 cuz
+fka
+GCP
 hashcode
 GCs
 DRs
@@ -138,9 +147,11 @@ markup
 AdminUserDataAccess
 DYI
 fullstory
+GKE
 amqp
 esp
 Bing
+hdr
 dyn
 proposalmanager
 TextField
@@ -182,6 +193,7 @@ KnowHow
 Milkmen
 fundingStatus
 HQL
+aren
 Dan's
 pushState
 INF
@@ -212,9 +224,12 @@ MatchingChallengeHibernateRepository
 baseSearchURL
 validately
 mac
+HealthCheckGracePeriod
 JMS
+isn
 jpg
 phifes
+ASGs
 ARLs
 JMX
 emailing
@@ -244,6 +259,7 @@ jsx
 openssh
 Asok
 Sheboygan
+JVM
 Claires
 NEA
 lng
@@ -286,8 +302,10 @@ MPM
 UserDataAccess
 edismax
 noResults
+MSA
 OHH
 NMH
+cmds
 PCI
 NLP
 pdf
@@ -316,6 +334,7 @@ eraseCookie
 mixpanel
 PID
 QAs
+prewww
 PGQ
 SQLite
 challengeProposals
@@ -334,6 +353,7 @@ Eaux
 overfunding
 Nontheism
 perlcode
+ntp
 num
 uninstall
 sriracha
@@ -362,9 +382,11 @@ freemium
 ppl
 ChallengeDataAccess
 san
+PoS
 apache
 numschools
 pre
+scl
 RJD
 sed
 yyyy
@@ -372,8 +394,8 @@ hipchat
 scp
 SDK
 oxm
-RHS
 PRs
+RHS
 enums
 conf
 TAF
@@ -396,6 +418,7 @@ pty
 pvo
 EhCache
 ehcache
+Catchpoint
 tfa
 tcp
 RMQ
@@ -411,11 +434,14 @@ enamored
 rsa
 eGit
 SLP
+sku
 prefetched
 getLast
 SNI
+PyYAML
 updateIndex
 SPF
+btwn
 TLD
 val
 canSendFax
@@ -458,6 +484,7 @@ getGiftCodeChallengeProposalFeedVOs
 CTEs
 validators
 ramen
+InstanceType
 vim
 unbold
 wei
@@ -466,6 +493,7 @@ SWU
 ttl
 WFH
 subdomains
+cuco
 boostValueBasedOnDistance
 jenkins
 cronjob
@@ -475,6 +503,7 @@ dojo
 decrypting
 url
 UTC
+AmiId
 TUX
 utf
 FGCG
@@ -493,13 +522,14 @@ unparam
 homosjews
 VOs
 VPN
+Kroenkes
 namespace
 varReinitSearch
-Kroenkes
 BYOL
 elem
 Cate's
 relevancy
+cryo
 Modularize
 maxage
 CTOs
@@ -527,6 +557,7 @@ Lockfiles
 wtf
 widenRetry
 Papertrail
+MinValue
 MySQL
 crowdsourced
 printf
@@ -562,6 +593,7 @@ dr
 gc
 Bitbucket
 fi
+yos
 GF
 du
 FK
@@ -652,6 +684,7 @@ tr
 wc
 subdomain
 un
+Grafana
 wildcard
 XA
 crontab
@@ -662,13 +695,16 @@ vo
 apisecure
 UW
 vs
+UX
 dups
+Hari
 chunked
 processMiddayEmails
 WS
 Stutz
 Vinnies
 Fastly's
+systemctl
 Scenesters
 expanddistrictname
 ZK
@@ -682,6 +718,7 @@ proposalworkflowstatus
 fallbacks
 findProposalMessagesByIds
 backend
+backends
 minifying
 useremailpreference
 admins
@@ -709,6 +746,7 @@ Dmitriy
 retroactive
 copyTomcat
 spaight
+kubeconfig
 redir
 Redis
 proposalsOnPage
@@ -724,6 +762,7 @@ exec
 catchall
 chicago
 mockup
+dcprod
 propertychange
 TextBlob
 Pokemania
@@ -741,10 +780,12 @@ teachertypes
 reconfirmation
 polymorphism
 nightlyBatch
+daemonset
 philanthropists
 processPhotos
 LaFarge
 bippy
+awscli
 RemindLateConfirmFirstWarningEmailJob
 expandedname
 teacherteachertype
@@ -754,11 +795,13 @@ Tollbooth
 renderer
 Posicore
 ingersoll
+EKSOptimizedAMIbyRegion
 goog
 vendornames
 leaderboards
 Alcatraz
 whisky
+SCHOOLWIDGET
 reify
 datacenters
 Modelland
@@ -771,6 +814,7 @@ nullable
 w'burg
 UserManager
 oldSearchURL
+apiqa
 throbber
 donorsview
 Iggy
@@ -798,6 +842,7 @@ orton
 groovy
 historicals
 jedi
+FQDNs
 userId
 fuzzysuggester
 readlink
@@ -805,6 +850,7 @@ Dmitriy's
 DefaultType
 gmail
 YSlow
+HostedGraphite
 showZeroFacetCountsForSchools
 DefaultRemindLateConfirmWarningEmailGeneratorData
 chrome
@@ -819,6 +865,7 @@ Litle
 trunc
 glibc
 solrconfigs
+Lollapolooza
 getChallengeName
 Frontend
 proxying
@@ -886,6 +933,7 @@ SweepExpiredFundsBatchJob
 chika
 stalkers
 html
+logmatic
 popup
 PROGNAME
 judkins
@@ -907,6 +955,7 @@ ints
 HSTS
 baseURL
 cellpadding
+heapster
 donoraccount
 Typekit
 XDELETE
@@ -934,6 +983,7 @@ SearchHandler
 meetup
 lockmetrics
 myprojects
+apiqasecure
 sharebar
 getProposalsByConfirmationDateOffset
 username
@@ -945,6 +995,7 @@ Mockups
 McClintock
 millis
 Analytics
+ParameterGroups
 scalability
 viewchallenge
 lucene
@@ -958,6 +1009,7 @@ proposalpoints
 teacherid
 thankyou
 Wavves
+Ashok
 facebook
 getTimeWhenEnteredWorkflowStatus
 AdminUser
@@ -970,8 +1022,10 @@ Prine
 xargs
 leaderboardchallenge
 Kroenke
+Datadog
 precalculated
 Shantaa
+SASSC
 postClean
 rabbitmqadmin
 sharding
@@ -983,6 +1037,7 @@ Maui
 mary
 regexp
 maxmind
+AutoScaling
 Givewell
 francisco
 hibernate's
@@ -1020,6 +1075,7 @@ varchar
 processProposalPhotos
 juli
 onclick
+kops
 entrypoint
 Minify
 phototype
@@ -1057,6 +1113,7 @@ gzipped
 krol
 hadeishi
 SocketException
+kube
 fuffs
 Ming's
 philanthropy
@@ -1089,11 +1146,14 @@ refactorings
 Cacheable
 cognito
 TeacherPhotoCropController
+LRCP
 findMostRecentProposalMessageByChallengeSupporter
 reproing
 multicore
+NetworkStackName
 config
 ChallengeLookupManager
+LOTR
 demus
 Hallowe'en
 algorithmically
@@ -1118,15 +1178,19 @@ Southside
 Dengue
 urgencyscore
 logEvents
+authenticator
 deployScript
+terraform
 logzio
 photospublisheddate
 utils
 determineStaleDismissals
+KeyName
 donorschoose's
 communityschool
 photopublished
 webflow
+deletePostgresMessages
 Lakeview
 ChallengeDataAccessImpl
 ghurka
@@ -1152,6 +1216,7 @@ tubman
 Greenler
 donormmi
 getIndexHistorical
+photoprocessor
 architecting
 sheepshead
 getIndex
@@ -1197,6 +1262,7 @@ ehache
 msgs
 Mozy
 placeholder
+whitelisted
 addressWizard
 lookupManager
 fswatch
@@ -1253,6 +1319,7 @@ javac
 TBLFM
 Brearly
 NSFW
+KeyPair
 centos
 loadResources
 stakeholders
@@ -1261,6 +1328,7 @@ rollout
 Ophiocordyceps
 staticnumdonors
 dhostname
+RBAC
 fussy
 buildJavascript
 whitelist
@@ -1278,6 +1346,7 @@ invisalign
 DNSSEC
 getMatchingChallengeProposalIds
 Logentries
+balancer
 Achewood
 validator
 findSchoolForm
@@ -1308,6 +1377,7 @@ OAuth
 coords
 dirname
 bccing
+namespacing
 launchctl
 saag
 Rees
@@ -1324,6 +1394,8 @@ Camila
 givingpagecampaign
 dcteacher
 lastupdatedate
+VpcCidr
+configmap
 ViewChallengeAPIController
 Murphys
 morningBatch
@@ -1339,8 +1411,8 @@ repo
 sal's
 Vinny's
 pref
-sbin
 Stites
+sbin
 campaignid
 Riak
 prev
@@ -1376,6 +1448,7 @@ deserialized
 SCSS
 postgres
 MaxPermSize
+preadmin
 donorschoose
 coney
 Risa
@@ -1415,6 +1488,7 @@ photoaliasuser
 uncheck
 adminuserid
 Craigslist
+Zadie
 donationoffset
 ToyLocation
 Bryn's
@@ -1446,10 +1520,12 @@ referenceData
 Bartosh
 redelivery
 temp
+subnets
 deductible
 creds
 endpoint
 metadata
+AllowedValues
 replicator
 lookup
 timeline
@@ -1457,6 +1533,7 @@ javascript
 webpagetest
 SendGrid
 sendgrid
+heptio
 homoschoose
 localstorage
 personemail
@@ -1469,7 +1546,9 @@ webcomics
 checkins
 autosuggester
 PhotoManager
+Quigley
 transitioning
+SKUs
 isCurrentUser
 zakas
 Stampfel
@@ -1500,8 +1579,8 @@ SPLC
 Sleater
 TMBG
 onpropertychange
-photonaminghelper
 PhotoNamingHelper
+photonaminghelper
 CRing
 photonumber
 ProposalComment
@@ -1515,6 +1594,7 @@ ToyProjects
 ringtone
 Heroku
 prefetch
+runSqlScript
 SQLs
 TeacherPhotoUploadController
 dismissible
@@ -1559,6 +1639,7 @@ studentsoffset
 getCurrencyInstance
 successview
 AFAIK
+prebatch
 lscache
 aspectj
 webpage
@@ -1567,11 +1648,13 @@ getChallengeTeachersNum
 deliminated
 tran
 wang
+CNAMEs
 hotfix
 neuromancer
 searchCrumbFrag
 NODENAME
 logfile
+TOTP
 Nancy's
 trie
 NewProposalManager
@@ -1588,6 +1671,7 @@ givingpage
 doubleValue
 listjobs
 regionList
+doesn
 toySearchPage
 logStringTail
 paneer
@@ -1603,6 +1687,7 @@ cdnsecure
 Pootie
 Vlad
 sendmail
+qasecure
 popstate
 Jimbo
 impls
@@ -1648,6 +1733,7 @@ toLowerCase
 urls
 subquery
 challengeNameDisplay
+createResource
 keira
 storagepath
 NoScript
@@ -1688,6 +1774,7 @@ checkboxes
 nomen
 createduserid
 getCamelCaseFromHyphenatedId
+DNSName
 popups
 cewolf
 groupadd
@@ -1727,6 +1814,7 @@ debaser
 firstname
 HSTS's
 sonic
+NatAddressesInHostedZone
 solrj
 diffing
 Solrs
@@ -1746,6 +1834,7 @@ Northside
 makeOnProcessingSuccessCallback
 pdumv
 honorees
+DomainStackName
 batchname
 Babs
 Sysdig
@@ -1754,6 +1843,7 @@ convertProposalUpdateVOsToProposalFeedVOs
 getProposalWorkflowStatuses
 setenv
 mincount
+Walkable
 sneerin
 maxresults
 ProposalPhotoUploadController
@@ -1774,11 +1864,13 @@ diffie
 BCCs
 https
 denormalized
+PostgresEndpointAddress
 ack
 endif
 geopoint
 ACL
 missingpage
+loopback
 uhaul
 CidrIp
 Hodgman
@@ -1787,6 +1879,7 @@ secureShortCacheURL
 NoSQL
 agg
 bcc
+AES
 className
 Denormalize
 bytecode
@@ -1809,6 +1902,7 @@ ViewChallengeController
 colbert
 constructUrlAlias
 AMI
+AKS
 costToComplete
 beforeclose
 dcproposal

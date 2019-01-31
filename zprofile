@@ -2,5 +2,5 @@ export PATH=/usr/local/opt/curl/bin:/usr/local/bin:$PATH:$HOME/.rvm/bin:/usr/loc
 export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 export PROPERTIES_DIR=local
 export REGION=us-east-1
-export KUBECONFIG="$HOME/.kube/config.dcprod-rancher:$HOME/.kube/config.dctest-rancher1:$HOME/.kube/config.dctest-rancher2"
 export WEB_REPO="$HOME/git/donorschoose-web"
+export NAMESPACE=chris
