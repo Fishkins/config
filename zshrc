@@ -5,6 +5,7 @@ dir_in_title() { settitle $PWD }
 chpwd_functions=(dir_in_title)
 autoload -U select-word-style
 select-word-style bash
+kind completion zsh > /usr/local/share/zsh/site-functions/_kind
 autoload -U compinit
 compinit
 setopt completeinword
@@ -134,6 +135,12 @@ __git_files () {
     _wanted files expl 'local files' _files     
 }
 
+# Set CLICOLOR if you want Ansi Colors in iTerm2 
+export CLICOLOR=1
+
+# Set colors to match iTerm2 Terminal Colors
+export TERM=xterm-256color
+
 # Automatically quote globs in URL and remote references
 __remote_commands=(scp rsync)
 autoload -U url-quote-magic
@@ -143,3 +150,6 @@ zstyle -e :urlglobber url-other-schema '[[ $__remote_commands[(i)$words[1]] -le 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
 
 cd . # This triggers the function that sets pwd as the terminal header
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/terraform terraform
