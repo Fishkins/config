@@ -1,4 +1,4 @@
-personal_ws-1.1 en 1965 
+personal_ws-1.1 en 1970 
 ABSearchURLFragment
 ACL
 AES
@@ -132,6 +132,7 @@ DCProposal
 DDOS
 DF
 DKIM
+DLP
 DNS
 DNSName
 DNSSEC
@@ -348,6 +349,7 @@ Minify
 Mockups
 Modelland
 Modularize
+Momodou
 Monona
 Moritz
 Mozy
@@ -386,6 +388,7 @@ OWASP
 Obj
 ObjectStorageManager
 OffsiteBackup
+Okta
 Oldham
 Ombeline
 Omer
@@ -848,6 +851,7 @@ crontab
 crontabs
 crowdsourced
 cryo
+cryptographic
 css
 ctrl
 ctrlp
@@ -1001,6 +1005,7 @@ expandeddistricts
 expandedname
 expirationdate
 ext
+externalities
 externalized
 fab
 facebook
