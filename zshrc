@@ -87,7 +87,6 @@ alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
 alias ltr='ls -ltr'
-alias gdeletemerged='git branch --merged=resolved | egrep "(BUGZID|WS-)" | grep -v "^*" | xargs git branch -d; git fetch origin --prune;'
 alias gpo='git push origin'
 alias gfm='git fetch dc-master'
 alias codeReview='open $(echo "https://github.com/FishkinsDC/donorschoose-web/compare/DonorsChoose:resolved...$(git curbranch)?expand=1&w=1" | tee >(pbcopy))'
@@ -96,24 +95,13 @@ alias killFswatch="ps -ef | grep fswatch | grep -v grep | awk '{print $2}' | xar
 alias cdg='cd ~/git/donorschoose-web/web'
 alias noelcopy="tr -d '\n' | pbcopy"
 alias en="emacsclient -n"
-alias dblocal='psql -h localhost -d dc_dev -U dcs'
-alias dbquery='psql "host=prod-query.donorschoose.org dbname=dc_prod user=chris sslmode=require"'
-dbqa() {
-    if [ -z $1 ]; then
-        local db=dc_qa0
-    else
-        local db=$1
-    fi
-    if [ -z $2 ]; then
-        local user=chris
-    else
-        local user=$2
-    fi
-    psql -h test-data.donorschoose.org -d $db -U $user $3
+fucntion gdeletemerged() {
+    git branch --merged=${1:-resolved} | egrep "(BUGZID|WS-)" | grep -v "^*" | xargs git branch -d
+    git fetch origin --prune
 }
 HISTFILE=~/.zhistory
 HISTSIZE=SAVEHIST=10000
-setopt incappendhistory 
+setopt incappendhistory
 setopt sharehistory
 setopt extendedhistory
 setopt extendedglob
@@ -131,11 +119,11 @@ bindkey "^n" history-beginning-search-forward-end
 source ~/.zshrcpersonal
 
 # Improve git file path completion speed
-__git_files () { 
-    _wanted files expl 'local files' _files     
+__git_files () {
+    _wanted files expl 'local files' _files
 }
 
-# Set CLICOLOR if you want Ansi Colors in iTerm2 
+# Set CLICOLOR if you want Ansi Colors in iTerm2
 export CLICOLOR=1
 
 # Set colors to match iTerm2 Terminal Colors
@@ -147,9 +135,55 @@ autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
 zstyle -e :urlglobber url-other-schema '[[ $__remote_commands[(i)$words[1]] -le ${#__remote_commands} ]] && reply=("*") || reply=(http https ftp)'
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 cd . # This triggers the function that sets pwd as the terminal header
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
+
+# k8s aliases
+function nodes() {
+    WORKPLANE="$1"
+    if [ -z "$WORKPLANE" ]; then echo "ERROR: Specify workplane"; return 1; fi
+    aws autoscaling describe-auto-scaling-groups --output=json \
+    | jq -r "[.AutoScalingGroups
+             |.[]
+             |select(.AutoScalingGroupName|test(\".*-$WORKPLANE-nodes-.*\"))
+             ] | map({(.AutoScalingGroupName): {
+                      CreatedTime: .CreatedTime,
+                      Instances: [.Instances[]]
+             }})"
+}
+
+function ready() {
+    kubectl get nodes -o json | \
+    jq -r '.items
+      |sort_by(.metadata.creationTimestamp)
+      |.[]
+      |select(.metadata.labels.online == "true")
+      |{nodeName: .metadata.name,
+        externalID: .spec.externalID,
+        creationTimestamp: .metadata.creationTimestamp,
+        conditions: .status.conditions[],
+        instanceType: .metadata.labels["node.kubernetes.io/instance-type"],
+        taintEffect: .spec.taints[0].effect
+      }
+      |select(.conditions.type == "Ready")
+      |{nodeName,
+        externalID,
+        creationTimestamp,
+        instanceType,
+        ready: .conditions.reason,
+        taintEffect
+      }'
+}
+
+function pods() {
+    export NAMESPACE=$1
+    kubectl get pods --namespace=$NAMESPACE -o json \
+    | jq -r '.items[]
+        |{hostname: .metadata.name,
+          nodeName: .spec.nodeName,
+          phase: .status.phase}'
+}

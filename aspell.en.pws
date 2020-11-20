@@ -1,4 +1,4 @@
-personal_ws-1.1 en 1970 
+personal_ws-1.1 en 2001 
 ABSearchURLFragment
 ACL
 AES
@@ -8,6 +8,7 @@ AMI
 ANDs
 AOP
 APIs
+APM
 APPNAME
 ARLs
 ASG
@@ -44,6 +45,7 @@ Asok
 Atlassian
 Authy
 AutoScaling
+Avenade
 BCCs
 BRS
 BSG
@@ -126,10 +128,13 @@ Craigslist
 CreateChallengeController
 Crossland
 Cumberbatch
+Címatur
+DBT
 DBs
 DC
 DCProposal
 DDOS
+DEI
 DF
 DKIM
 DLP
@@ -207,6 +212,7 @@ FaxNumberFetcher
 FaxNumberValidatorSpec
 FeedbackType
 Femmes
+Feywild
 Fivetran
 Flobots
 Friendsgiving
@@ -218,6 +224,7 @@ GCs
 GF
 GKE
 GP
+GPG
 GPs
 GeoNames
 Ghenet
@@ -236,6 +243,7 @@ HSTS's
 Haines
 Hallowe'en
 Hamell
+Hanto
 Hari
 Haskell
 HealthCheckGracePeriod
@@ -262,9 +270,11 @@ IPAs
 IPs
 IRA
 Ian
+Ichiru
 Ig
 Iggy
 ImmutableMap
+Innil
 InstanceType
 Isham
 JBPM
@@ -303,6 +313,7 @@ Kroenkes
 Kubernetes
 Kweli
 LARPing
+LDF
 LF
 LOTR
 LRCP
@@ -342,6 +353,8 @@ MeasuredSearch
 Memcached
 Mendota
 Metagenda
+MetricFire
+Michiwan
 Milkmen
 MinValue
 Ming's
@@ -372,6 +385,7 @@ Nashorn
 NatAddressesInHostedZone
 NetworkStackName
 NewProposalManager
+NewRelic
 Newsome
 Nhu
 NoSQL
@@ -402,6 +416,7 @@ PCI
 PGQ
 PHP
 PID
+PJ
 PNC
 PPI
 PQA
@@ -423,8 +438,10 @@ Pogues
 Pokemania
 Pootie
 Posicore
+Postedunsek
 PostgreSQL
 PostgresEndpointAddress
+PowerOf
 Prine
 PropUp
 ProposalComment
@@ -502,6 +519,7 @@ STS
 SVN
 SWU
 Sahana
+Sanjana
 Scala
 Scenesters
 SearchFilterVO
@@ -560,6 +578,7 @@ TeacherCropCont
 TeacherPhotoCropController
 TeacherPhotoUploadController
 TeacherUpCont
+Teris
 TextBlob
 TextField
 That'll
@@ -628,6 +647,7 @@ XPUT
 XSS
 Xiu
 YAF
+YALD
 YAMLs
 YSlow
 YouHaveDonationsToReallocateAlertTypeManager
@@ -753,6 +773,7 @@ campaignid
 canSendFax
 cancellable
 canibus
+cardinality
 cartDonationMessage
 casimir
 catalina
@@ -776,6 +797,7 @@ challengetype
 challengetypes
 challengid
 charles
+chatbot
 checkbox
 checkboxes
 checkins
@@ -871,6 +893,7 @@ db
 dbcp
 dbm
 dcadminuser
+dcbackups
 dcdonation
 dcdonor
 dcmaster
@@ -957,6 +980,7 @@ dropdown
 dropdownMixin
 dropdowns
 du
+dungeoneer's
 dup
 dupes
 dups
@@ -977,6 +1001,7 @@ elif
 emailed
 emailing
 emails
+embarassing
 emptyDir
 enablePositionIncrements
 enamored
@@ -1262,6 +1287,7 @@ jsx
 judkins
 juli
 jumpbox
+katana
 keepalive
 keira
 kennedys
@@ -1450,6 +1476,7 @@ onclick
 onoff
 onpropertychange
 onuabour
+openjdk
 openssh
 ops
 optimizations
@@ -1539,6 +1566,7 @@ prewww
 pricer
 printf
 prio
+prios
 processEmailQueue
 processGeneralQueues
 processLate
@@ -1665,6 +1693,7 @@ sal's
 salesforce
 samplemessageusers
 san
+sauvignon
 sbin
 scalability
 schoolid
@@ -1843,6 +1872,7 @@ trackMatchingView
 tran
 transactional
 transitioning
+trepidatious
 triads
 triaged
 trie
@@ -1861,6 +1891,7 @@ un
 unarchive
 unbold
 uncacheable
+uncharismatic
 uncheck
 uncomment
 uncropped
