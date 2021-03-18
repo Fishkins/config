@@ -117,6 +117,7 @@
 (add-to-list 'auto-mode-alist '("\\.(rdf|xul)$" . xml-mode))
 (add-to-list 'auto-mode-alist '("emacs" . emacs-lisp-mode))
 (add-to-list 'auto-mode-alist '("zshrc" . sh-mode))
+(add-to-list 'auto-mode-alist '("zprofile" . sh-mode))
 
 ;; Set up org mode
 (add-hook 'org-mode-hook 'visual-line-mode)
