@@ -59,8 +59,6 @@ values."
      ;; version-control
 
      ;; personal layers
-     vcl 
-     dockerfile-mode
      html
      )
    ;; List of additional packages that will be installed without being
@@ -145,11 +143,12 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
-                               :weight normal
-                               :width normal
-                               :powerline-scale 1.1)
+   ;; Commented out because the font doesn't exist
+   ;; dotspacemacs-default-font '("Source Code Pro"
+   ;;                             :size 13
+   ;;                             :weight normal
+   ;;                             :width normal
+   ;;                             :powerline-scale 1.1)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The key used for Emacs commands (M-x) (after pressing on the leader key).
@@ -240,7 +239,7 @@ values."
    ;; If non nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup 'true
+   dotspacemacs-maximized-at-startup t
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
@@ -440,7 +439,7 @@ you should place your code here."
 
   ;; ispell setup
   (setq ispell-silently-savep t)
-  (setq ispell-program-name "/usr/local/bin/aspell")
+  (setq ispell-program-name "/opt/homebrew/bin/aspell")
   (setq ispell-extra-args '("--sug-mode=ultra" "--ignore-case"))
   )
 
@@ -538,3 +537,4 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  )
 )
+(server-start) 
