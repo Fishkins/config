@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Get latest packages
 brew update; brew upgrade
  
@@ -29,5 +30,5 @@ brew install \
 
 brew install curl aspell jq
 
-brew install emacs
+brew install homebrew/cask/emacs
 # "Quick install" https://github.com/syl20bnr/spacemacs
