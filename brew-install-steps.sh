@@ -26,9 +26,10 @@ brew install \
 brew install \
   bash \
   m4 \
-  make
+  make \
+  zsh
 
 brew install curl aspell jq
 
 brew install homebrew/cask/emacs
-# "Quick install" https://github.com/syl20bnr/spacemacs
+# "Quick Start" https://github.com/syl20bnr/spacemacs

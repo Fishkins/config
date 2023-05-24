@@ -93,3 +93,4 @@ cd . # This triggers the function that sets pwd as the terminal header
 
 autoload -U +X bashcompinit && bashcompinit
 
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
