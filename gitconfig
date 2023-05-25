@@ -5,8 +5,8 @@
     ignorecase = true
     excludesfile = /Users/fishkins/.gitignore_global
 [user]
-	name = Chris Fishkins
-    email = squall1386@hotmail.com
+    name = Chris Fishkins
+    email = chris.judkins-fisher@donorschoose.org
 [difftool]
     prompt = false
 [diff]
@@ -39,10 +39,10 @@
 [push]
     default = matching
 [pull]
-	rebase = true
+    rebase = true
 [rebase]
-	autosquash = true
+    autosquash = true
 [http]
-	postBuffer = 157286400
+    postBuffer = 157286400
 [ssh]
-	postBuffer = 524288000
+    postBuffer = 524288000

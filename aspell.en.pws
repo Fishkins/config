@@ -1,4 +1,4 @@
-personal_ws-1.1 en 2059 
+personal_ws-1.1 en 2060 
 ABSearchURLFragment
 ACL
 AES
@@ -974,6 +974,7 @@ dhostname
 diff
 diffie
 diffing
+difftool
 diffuser
 dir
 dirname
