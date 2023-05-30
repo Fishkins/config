@@ -5,4 +5,10 @@ export PATH="/opt/homebrew/opt/openssl@3/bin:/opt/homebrew/opt/findutils/libexec
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 export PATH="/opt/homebrew/opt/python@3.8/libexec/bin:$PATH"
-export PATH="$HOME/Developer/usr/bin/jdk-11.0.8+10/Contents/Home/bin:$PATH"
+
+export DEV_HOME=~/Developer
+export DEV_BIN=$DEV_HOME/usr/bin
+export DEV_SRC=$DEV_HOME/src
+export DC_WEB=$DEV_SRC/donorschoose-web/web
+export AWS_DEVOPS=$DEV_SRC/aws-devops
+export PATH="$DEV_BIN/jdk-11.0.8+10/Contents/Home/bin:$PATH"

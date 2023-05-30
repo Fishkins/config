@@ -16,32 +16,43 @@ gitselectbranch() {
 
     while [ ! $numBranches -eq 1 ]
     do
-	if [ $numBranches -eq 0 ]
-	then
-	    echo "No such branch. Choose one of these branches."
-	    branches=$(git branch | grep -v "^*")
-	else
-	    echo "Multiple matches. Add another filter."
-	fi
+        if [ $numBranches -eq 0 ]
+        then
+            echo "No such branch. Choose one of these branches."
+            branches=$(git branch | grep -v "^*")
+        else
+            echo "Multiple matches. Add another filter."
+        fi
 
-	echo $branches
-	read newFilter
-	branches=$(echo $branches | grep -i $newFilter)
-	numBranches=$(echo $branches | wc -w | awk '{print $1}')
+        echo $branches
+        read newFilter
+        branches=$(echo $branches | grep -i $newFilter)
+        numBranches=$(echo $branches | wc -w | awk '{print $1}')
     done
 }
 gitcheckout() {
     gitselectbranch $1
     echo $branches | xargs git checkout
 }
+gpushcurr() {
+    git push branch origin $(git curbranch)
+}
 copycase() {
-    curBranch=$(git curbranch)
-    newBranchName="${curBranch}_revised"
+    local curBranch=$(git curbranch)
+    local newBranchName="${curBranch}_revised"
     git checkout -b $newBranchName $curBranch
-    git branch $newBranchName -u dc-master/resolved
+    git branch $newBranchName -u dc/resolved
+}
+setupstream() {
+    git branch --set-upstream-to=dc/resolved
+    git pull
+}
+casecommit() {
+    local case=$(git curbranch | awk -F- '{print $1 "-" $2}')
+    git ci -a -m "$case $*"
 }
 alias gpushcurr='git push origin $(git curbranch)'
-alias psgrep='ps -ef | head -1;ps -ef | grep -v grep | egrep -i'
+alias psgrep='ps -ef | head -1;ps -ef | grep -v grep | grep -E -i'
 alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
