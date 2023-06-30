@@ -1,4 +1,4 @@
-personal_ws-1.1 en 2060 
+personal_ws-1.1 en 2072 
 ABSearchURLFragment
 ACL
 AES
@@ -250,6 +250,7 @@ Greenler
 Grinnell
 Gustafson
 HDDs
+HN
 HQL
 HSED
 HSTS
@@ -333,6 +334,7 @@ Kubernetes
 Kweli
 LARPing
 LBE
+LBEs
 LDF
 LF
 LMK
@@ -421,6 +423,7 @@ OG
 OHH
 OHH's
 OOM
+OTP
 OWASP
 Obj
 ObjectStorageManager
@@ -600,8 +603,11 @@ TOC
 TODO
 TOTP
 TPC
+TPT
+TRD
 TTLs
 TUX
+TYP
 Tai
 TeacherAlertService
 TeacherCropCont
@@ -795,6 +801,7 @@ breadcrumb
 breadcrumbs
 brownbag
 btwn
+bugcrowd
 buildJavascript
 buildSystemComment
 buildout
@@ -1081,6 +1088,7 @@ fallbacks
 fam
 favCookiesSet
 favSearchURLs
+favicon
 favorited
 favoritee
 favoriting
@@ -1531,6 +1539,7 @@ onoff
 onpropertychange
 onuabour
 openjdk
+opensearch
 openssh
 ops
 optimizations
@@ -1753,6 +1762,7 @@ san
 sauvignon
 sbin
 scalability
+scanii
 schoolid
 schoolname
 schoolschooltype
@@ -1967,6 +1977,7 @@ updateFavoritesCookie
 updateIndex
 uploader
 uploadstatus
+upsell
 uptime
 urgency
 urgencyscore
@@ -1990,6 +2001,7 @@ varReinitSearch
 varchar
 vars
 vas
+vcl
 vendornames
 verifyOrigin
 versa

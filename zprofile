@@ -1,3 +1,4 @@
+# -*- sh -*-
 export PATH="/opt/homebrew/bin:/opt/homebrew/opt/curl/bin:/opt/homebrew/bin:$PATH"
 # Homebrew paths were generated from the line below. Pre-running since evaluating this line takes a while.
 #export PATH="$(brew --prefix openssl)/bin:$(brew --prefix findutils)/libexec/gnubin:$(brew --prefix gnu-indent)/libexec/gnubin:$(brew --prefix gnu-sed)/libexec/gnubin:$(brew --prefix gnu-tar)/libexec/gnubin:$(brew --prefix gnu-which)/libexec/gnubin:$(brew --prefix grep)/libexec/gnubin:$(brew --prefix coreutils)/libexec/gnubin:$PATH"
@@ -10,5 +11,8 @@ export DEV_HOME=~/Developer
 export DEV_BIN=$DEV_HOME/usr/bin
 export DEV_SRC=$DEV_HOME/src
 export DC_WEB=$DEV_SRC/donorschoose-web/web
-export AWS_DEVOPS=$DEV_SRC/aws-devops
+export AWS_DEVOPS_DIR=$DEV_SRC/aws-devops
+export FASTLY_DIR=$DEV_SRC/fastly
+export JMETER_DIR=$DEV_SRC/jmeter
 export PATH="$DEV_BIN/jdk-11.0.8+10/Contents/Home/bin:$PATH"
+export JAVA_HOME="$HOME/Developer/usr/bin/jdk-11.0.8+10/Contents/Home"

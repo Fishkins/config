@@ -1,3 +1,4 @@
+# -*- sh -*-
 PROMPT='$ '
 fpath=(/usr/local/share/zsh-completions ~/.zsh/completion $fpath)
 settitle() { printf "\e]0;$@\a" }
@@ -34,8 +35,21 @@ gitcheckout() {
     gitselectbranch $1
     echo $branches | xargs git checkout
 }
-gpushcurr() {
-    git push branch origin $(git curbranch)
+gpushcurrresolved() {
+    echo "Are you sure you want to push to resolved? (y/n)"
+    read confirmation
+
+    if [[ $confirmation == y ]]; then
+        git push dc-master $(git curbranch):resolved
+    else
+        echo "not pushing"
+    fi
+}
+gitdiffclass() {
+    git wdiff src/**/$1.java
+}
+gitlogclass() {
+    git logp src/**/$1.java
 }
 copycase() {
     local curBranch=$(git curbranch)
@@ -45,11 +59,19 @@ copycase() {
 }
 setupstream() {
     git branch --set-upstream-to=dc/resolved
-    git pull
+    git pull --rebase
 }
 casecommit() {
     local case=$(git curbranch | awk -F- '{print $1 "-" $2}')
     git ci -a -m "$case $*"
+}
+casecommit() {
+    if [[ $(git curbranch) =~ ^(WS|IOPS) ]]
+    then
+        local CASE_ID="$(git curbranch | awk -F'-' '{print $1 "-" $2}') "
+    fi
+
+    git commit -a -m "${CASE_ID}$*"
 }
 alias gpushcurr='git push origin $(git curbranch)'
 alias psgrep='ps -ef | head -1;ps -ef | grep -v grep | grep -E -i'
@@ -106,3 +128,15 @@ cd . # This triggers the function that sets pwd as the terminal header
 autoload -U +X bashcompinit && bashcompinit
 
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+deleteapplicationbranchesfromdockerrepos() {
+    ls | grep docker | while read repo
+    do
+        pushd $repo
+        git branch| grep 'WS-' | while read branch
+        do
+            git branch -D $branch
+        done
+        popd
+    done
+}
