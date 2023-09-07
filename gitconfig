@@ -7,15 +7,20 @@
 [user]
     name = Chris Fishkins
     email = chris.judkins-fisher@donorschoose.org
-[difftool]
-    prompt = false
+# Temporarily comment out since kdiff3 keeps crashing
+# [difftool]
+#     prompt = false
 [diff]
     tool = kdiff3
 [mergetool]
-    prompt = false
+    # prompt = false
     keepBackup = false
 [merge]
     tool = kdiff3
+# [merge]
+#     tool = magit-emacs
+# [mergetool "magit-emacs"]
+#     cmd = emacsclient --eval "(magit-merge \"$PWD/$BASE\" \"$PWD/$LOCAL\" \"$PWD/$REMOTE\" \"$PWD/$MERGED\")"
 [alias]
     lg = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
     co = checkout

@@ -40,7 +40,7 @@ gpushcurrresolved() {
     read confirmation
 
     if [[ $confirmation == y ]]; then
-        git push dc-master $(git curbranch):resolved
+        git push dc $(git curbranch):resolved
     else
         echo "not pushing"
     fi
@@ -84,6 +84,11 @@ alias reloadConfig='pushd ~; source .zshrc; popd;'
 alias killFswatch="ps -ef | grep fswatch | grep -v grep | awk '{print $2}' | xargs kill"
 alias noelcopy="tr -d '\n' | pbcopy"
 alias en="emacsclient -n"
+alias cdg="cd $DEV_SRC"
+alias cdw="cd $DC_WEB"
+alias cda="cd $AWS_DEVOPS_DIR"
+alias cdf="cd $FASTLY_DIR"
+
 HISTFILE=~/.zhistory
 HISTSIZE=SAVEHIST=10000
 setopt incappendhistory
@@ -130,7 +135,7 @@ autoload -U +X bashcompinit && bashcompinit
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 deleteapplicationbranchesfromdockerrepos() {
-    ls | grep docker | while read repo
+    ls | grep -E "docker|fastly" | while read repo
     do
         pushd $repo
         git branch| grep 'WS-' | while read branch
@@ -139,4 +144,16 @@ deleteapplicationbranchesfromdockerrepos() {
         done
         popd
     done
+}
+
+deleteUntrackedFiles() {
+    git stat | grep "??" | cut -d' ' -f2
+    echo "Are you sure you want delete the above files? (y/n)"
+    read confirmation
+
+    if [[ $confirmation == y ]]; then
+        git stat | grep "??" | cut -d' ' -f2 | xargs rm
+    else
+        echo "not deleting"
+    fi
 }

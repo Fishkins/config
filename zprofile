@@ -16,3 +16,8 @@ export FASTLY_DIR=$DEV_SRC/fastly
 export JMETER_DIR=$DEV_SRC/jmeter
 export PATH="$DEV_BIN/jdk-11.0.8+10/Contents/Home/bin:$PATH"
 export JAVA_HOME="$HOME/Developer/usr/bin/jdk-11.0.8+10/Contents/Home"
+
+export LESS="IFRX"
+
+# Add path to manually installed kdiff3
+export PATH="/Applications/kdiff3.app/Contents/MacOS/:$PATH"
