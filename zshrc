@@ -58,7 +58,18 @@ copycase() {
     git branch $newBranchName -u dc/resolved
 }
 setupstream() {
-    git branch --set-upstream-to=dc/resolved
+    local repo="$(basename $(git rev-parse --show-toplevel))"
+    local upstream=origin/master
+
+    if [[ $repo == aws-devops ]]
+    then
+        upstream=origin/resolved
+    elif [[ $repo == donorschoose-web ]]
+    then
+        upstream=dc/resolved
+    fi
+
+    git branch --set-upstream-to=$upstream
     git pull --rebase
 }
 casecommit() {
@@ -156,4 +167,51 @@ deleteUntrackedFiles() {
     else
         echo "not deleting"
     fi
+}
+
+# eks node management functions
+function nodes() {
+    local WORKPLANE="$1"
+    if [ -z "$WORKPLANE" ]; then echo "ERROR: Specify workplane"; return 1; fi
+    aws autoscaling describe-auto-scaling-groups --output=json \
+        | jq -r "[.AutoScalingGroups
+             |.[]
+             |select(.AutoScalingGroupName|test(\".*-$WORKPLANE-nodes-.*\"))
+             ] | map({(.AutoScalingGroupName): {
+                      CreatedTime: .CreatedTime,
+                      Instances: [.Instances[]]
+             }})"
+}
+
+function ready() {
+    kubectl get nodes -o json | \
+        jq -r '.items
+      |sort_by(.metadata.creationTimestamp)
+      |.[]
+      |select(.metadata.labels.online == "true")
+      |{nodeName: .metadata.name,
+        externalID: .spec.externalID,
+        creationTimestamp: .metadata.creationTimestamp,
+        conditions: .status.conditions[],
+        instanceType: .metadata.labels["node.kubernetes.io/instance-type"],
+        taintEffect: .spec.taints[0].effect
+      }
+      |select(.conditions.type == "Ready")
+      |{nodeName,
+        externalID,
+        creationTimestamp,
+        instanceType,
+        ready: .conditions.reason,
+        taintEffect
+      }'
+}
+
+function pods() {
+    local NAMESPACE=$1
+    kubectl get pods --namespace=$NAMESPACE -o json \
+        | jq -r '.items[]
+             |{hostname: .metadata.name,
+               nodeName: .spec.nodeName,
+               phase: .status.phase
+              }' 
 }
