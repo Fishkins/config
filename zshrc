@@ -36,11 +36,25 @@ gitcheckout() {
     echo $branches | xargs git checkout
 }
 gpushcurrresolved() {
-    echo "Are you sure you want to push to resolved? (y/n)"
+    local repo="$(basename $(git rev-parse --show-toplevel))"
+    local remote=origin
+    local branch=master
+
+    if [[ $repo == aws-devops ]]
+    then
+        remote=origin
+        branch=resolved
+    elif [[ $repo == donorschoose-web ]]
+    then
+        remote=dc
+        branch=resolved
+    fi
+
+    echo "Are you sure you want to push to $repo $remote/$branch? (y/n)"
     read confirmation
 
     if [[ $confirmation == y ]]; then
-        git push dc $(git curbranch):resolved
+        git push $remote $(git curbranch):$branch
     else
         echo "not pushing"
     fi
@@ -71,10 +85,6 @@ setupstream() {
 
     git branch --set-upstream-to=$upstream
     git pull --rebase
-}
-casecommit() {
-    local case=$(git curbranch | awk -F- '{print $1 "-" $2}')
-    git ci -a -m "$case $*"
 }
 casecommit() {
     if [[ $(git curbranch) =~ ^(WS|IOPS) ]]
@@ -144,8 +154,10 @@ cd . # This triggers the function that sets pwd as the terminal header
 autoload -U +X bashcompinit && bashcompinit
 
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
+complete -C '/opt/homebrew/bin/aws_completer' aws
 
 deleteapplicationbranchesfromdockerrepos() {
+    pushd $DEV_SRC
     ls | grep -E "docker|fastly" | while read repo
     do
         pushd $repo
@@ -155,6 +167,7 @@ deleteapplicationbranchesfromdockerrepos() {
         done
         popd
     done
+    popd
 }
 
 deleteUntrackedFiles() {

@@ -1,4 +1,4 @@
-personal_ws-1.1 en 2105 
+personal_ws-1.1 en 2150 
 ABSearchURLFragment
 ACL
 AES
@@ -61,6 +61,7 @@ Bartosh
 BaseDAO
 Berti
 Betz
+Betz's
 Bharath
 BiasedLockingStartupDelay
 Bing
@@ -71,6 +72,7 @@ BlockConnections
 Boberg
 Boris
 Boris's
+Braintree
 Branntwein
 Brearly
 Brimmer
@@ -182,12 +184,14 @@ Dmitriy
 Dmitriy's
 DocumentBuilderFactory
 DocumentBuilderFactoryImpl
+Dogfooding
 DomainStackName
 DonorChooseURI
 DonorCropCont
 DonorPhotoCropController
 DonorPhotoUploadController
 DonorUpCont
+DonorsChoose
 Dropkick
 EBS
 EFF
@@ -196,6 +200,7 @@ EIF
 EKS
 EKSOptimizedAMIbyRegion
 ELB
+EMs
 EPS
 EQL
 ESM
@@ -226,6 +231,7 @@ Fastly's
 FaxNumberFetcher
 FaxNumberValidatorSpec
 FeedbackType
+Feedburner
 Femmes
 Feywild
 Fivetran
@@ -237,6 +243,7 @@ Fugazi
 GBs
 GCP
 GCs
+GETs
 GF
 GKE
 GP
@@ -264,6 +271,7 @@ Hallowe'en
 Hamell
 Hanto
 Hari
+HashMap
 Haskell
 HealthCheckGracePeriod
 Heems
@@ -290,6 +298,8 @@ IP
 IPAs
 IPs
 IRA
+IXL
+IaC
 Ian
 Ichiru
 Ig
@@ -309,6 +319,7 @@ JSONP
 JSPs
 JVM
 Jackson's
+Jarrit
 Jazzpunk
 Jeana
 Jeana's
@@ -350,6 +361,7 @@ LRCP
 LZWM's
 LaFarge
 Lakeview
+LastPass
 Lennox
 LinkedHashMap
 LinkedIn
@@ -382,6 +394,7 @@ McTavish
 MeasuredSearch
 Memcached
 Mendota
+Meraki
 Metagenda
 MetricFire
 MiB
@@ -402,11 +415,14 @@ MySQL
 NEA
 NFJS
 NFP
+NGWAF
 NLP
 NMH
 NODENAME
 NOPASSWD
+NPA
 NPE
+NPEs
 NRDC
 NSFW
 NYC
@@ -427,9 +443,11 @@ Nontheism
 Northside
 NumberFormat
 OAuth
+OFAC
 OG
 OHH
 OHH's
+OO
 OOM
 OOMs
 OTP
@@ -454,6 +472,7 @@ PHP
 PID
 PJ
 PNC
+POSTs
 PPI
 PQA
 PQHE
@@ -505,6 +524,7 @@ Quora
 RBAC
 RDS
 RDSInstanceID
+README
 REI
 RFParamForProjectWithTeacherIdDecorator
 RHS
@@ -514,6 +534,7 @@ RabbitMQ
 RabbitMQ's
 RabbitmqConsumer
 Rafi
+Rahim
 Ramones
 Rebecca
 Redis
@@ -528,7 +549,9 @@ Riak
 Risa
 Risa's
 Riverview
+RoR
 RollbackException
+Rollup
 Roma
 Ruscetta
 SASS
@@ -543,6 +566,7 @@ SHA
 SKUs
 SL
 SLP
+SMS
 SNI
 SPF
 SPLC
@@ -560,6 +584,7 @@ STS
 SVN
 SWU
 Sahana
+Sakariya
 Sanjana
 Scala
 Scenesters
@@ -574,6 +599,7 @@ SendGrid
 Shantaa
 Sheboygan
 Shoop
+SigSci
 SigSi
 SimpleFormController
 Sketchfest
@@ -594,6 +620,7 @@ Spektor
 Stampfel
 StandardTeacherAlertService
 Steen
+Stephon
 Stites
 StringBuffer
 StringBuilder
@@ -622,6 +649,7 @@ TRD
 TTLs
 TUX
 TYP
+Taha
 Tai
 TeacherAlertService
 TeacherCropCont
@@ -634,6 +662,7 @@ TextBlob
 TextField
 That'll
 There've
+ThoughtWorks
 ThreadLocal
 Thur
 ToPort
@@ -708,6 +737,7 @@ ZK
 ZKs
 Zach
 Zadie
+Zahra
 Zendesk
 abraham
 accountcredit
@@ -790,6 +820,7 @@ baseURL
 basename
 bastian
 batchfund
+batchfunding
 batchname
 bbox
 bcc
@@ -809,6 +840,7 @@ blog
 bluebutton
 bois
 boneheaded
+bono
 booleans
 boostValueBasedOnDistance
 bot
@@ -873,6 +905,7 @@ chris
 christopher
 chrome
 chunked
+ciserver
 cityname
 className
 classloader
@@ -890,6 +923,7 @@ co
 codebase
 cognito
 colbert
+colo
 colorpop
 combos
 commitWithin
@@ -930,6 +964,7 @@ creatorUser
 credentials
 creditcard
 creds
+crit
 cron
 cronjob
 cronjobs
@@ -949,6 +984,7 @@ cuz
 cyber
 daemonset
 dal
+datacenter
 datacenters
 datadir
 datname
@@ -986,6 +1022,7 @@ deployScript
 deployScripts
 deploySolr
 deprecations
+deprioritize
 deps
 desc
 deserialized
@@ -1244,6 +1281,7 @@ gzipped
 hCaptcha
 hackathon
 hackathons
+hackier
 hacky
 hadeishi
 haha
@@ -1276,6 +1314,7 @@ hostmonster
 hostname
 hostnames
 hotfix
+hotfixed
 hotkeys
 hotmail
 hoverable
@@ -1472,6 +1511,7 @@ meetup
 memcache
 memoriam
 mensi
+mentorship
 metadata
 metrocodes
 mgmt
@@ -1655,6 +1695,7 @@ pretreat
 prev
 preventDefault
 prewww
+pri
 pricer
 printf
 prio
@@ -1669,6 +1710,7 @@ processQuarterHourlyEmails
 processbatchfund
 procs
 prod
+prodeng
 profiler
 programmatically
 projectlist
@@ -1723,6 +1765,7 @@ readCookie
 readlink
 reallocations
 reattach
+rebaser
 rebasing
 recalc
 recalcing
@@ -1773,6 +1816,7 @@ retval
 ringtone
 rm
 rmdir
+roadmap
 rogers
 rollback
 rollout
@@ -2067,6 +2111,7 @@ website
 wei
 wget
 whisky
+whiteboarding
 whitelist
 whitelisted
 whitelisting
