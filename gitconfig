@@ -11,6 +11,7 @@
 # [difftool]
 #     prompt = false
 [diff]
+    algorithm = histogram
     tool = kdiff3
 [mergetool]
     # prompt = false
@@ -48,6 +49,8 @@
     rebase = true
 [rebase]
     autosquash = true
+[rerere]
+    enabled = true
 [http]
     postBuffer = 157286400
 [ssh]

@@ -1,4 +1,4 @@
-personal_ws-1.1 en 2150 
+personal_ws-1.1 en 2154 
 ABSearchURLFragment
 ACL
 AES
@@ -224,6 +224,7 @@ FGC
 FGCG
 FK
 FQDNs
+FTF
 FY
 Fairview
 Fastly
@@ -331,6 +332,7 @@ JsonFeedController
 JsonFeedParameters
 KMS
 KRS
+Kachi
 Kamau
 Kandji
 Keiran
@@ -572,6 +574,7 @@ SPF
 SPLC
 SPOF
 SPP
+SQLi
 SQLite
 SQLs
 SQS
@@ -1623,6 +1626,7 @@ overcommits
 overfunded
 overfunding
 oxm
+pageName
 paneer
 param
 parameterize
