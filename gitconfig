@@ -4,6 +4,7 @@
     editor = vim
     ignorecase = true
     excludesfile = /Users/fishkins/.gitignore_global
+    # pager = delta
 [user]
     name = Chris Fishkins
     email = chris.judkins-fisher@donorschoose.org
