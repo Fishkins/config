@@ -4,18 +4,19 @@
     editor = vim
     ignorecase = true
     excludesfile = /Users/fishkins/.gitignore_global
-    # pager = delta
+    pager = delta
+[delta]
+    syntax-theme = Solarized (light)
 [user]
     name = Chris Fishkins
     email = chris.judkins-fisher@donorschoose.org
-# Temporarily comment out since kdiff3 keeps crashing
-# [difftool]
-#     prompt = false
+[difftool]
+    prompt = false
 [diff]
     algorithm = histogram
     tool = kdiff3
 [mergetool]
-    # prompt = false
+    prompt = false
     keepBackup = false
 [merge]
     tool = kdiff3
