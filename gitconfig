@@ -15,6 +15,7 @@
 [diff]
     algorithm = histogram
     tool = kdiff3
+    renameLimit = 4097
 [mergetool]
     prompt = false
     keepBackup = false

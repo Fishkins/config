@@ -1,4 +1,4 @@
-personal_ws-1.1 en 2156 
+personal_ws-1.1 en 2179 
 ABSearchURLFragment
 ACL
 AES
@@ -41,6 +41,8 @@ Alopecia
 AmiId
 Analytics
 Andi
+Anh
+Annalissa
 AoEs
 Asa
 Ashok
@@ -83,8 +85,10 @@ Buenos
 BugCrowd
 CA
 CAH
+CAPTCHA
 CDN
 CDNs
+CEs
 CHVRCHES
 CIDR
 CIDRs
@@ -101,9 +105,11 @@ CRs
 CSP
 CSRF
 CSV
+CTCV
 CTE
 CTEs
 CTOs
+CVE
 CVRCHES
 Cacheable
 Camila
@@ -147,6 +153,7 @@ DBs
 DC
 DCProposal
 DDOS
+DDoS
 DEI
 DF
 DKIM
@@ -310,6 +317,7 @@ Innil
 InstanceType
 Isa
 Isham
+JARs
 JBPM
 JDK
 JMS
@@ -330,11 +338,14 @@ Joe's
 Jonathans
 JsonFeedController
 JsonFeedParameters
+Junki
+KKL
 KMS
 KRS
 Kachi
 Kamau
 Kandji
+Kantola
 Keiran
 Kelly's
 Ken's
@@ -367,6 +378,7 @@ LastPass
 Lennox
 LinkedHashMap
 LinkedIn
+Linode
 Litle
 Liv
 LoadModule
@@ -427,6 +439,7 @@ NPE
 NPEs
 NRDC
 NSFW
+NVC
 NYC
 NYE
 NameVirtualHost
@@ -567,6 +580,7 @@ SG
 SHA
 SKUs
 SL
+SLG
 SLP
 SMS
 SNI
@@ -643,6 +657,7 @@ TGW
 TJ's
 TLD
 TLS
+TLs
 TMBG
 TOC
 TODO
@@ -650,6 +665,7 @@ TOTP
 TPC
 TPT
 TRD
+TRDs
 TTLs
 TUX
 TYP
@@ -925,6 +941,7 @@ cmds
 cmte
 co
 codebase
+codepen
 cognito
 colbert
 colo
@@ -1147,6 +1164,7 @@ facebook
 failover
 fallbacks
 fam
+faq
 fastly
 favCookiesSet
 favSearchURLs
@@ -1268,6 +1286,7 @@ giftpurchaseid
 giftpurchases
 git
 github
+givingCart
 givingpage
 givingpagecampaign
 glibc
@@ -1344,6 +1363,7 @@ iframes
 imagemagick
 imgix
 imgs
+impactful
 impl
 impls
 inFY
@@ -1582,6 +1602,7 @@ nightlyBatch
 noResults
 nodeSelector
 nomen
+nontheist
 notConcise
 notNets
 nov
@@ -2016,6 +2037,7 @@ tomcat
 tomcats
 toplevel
 toySearchPage
+tpc
 tr
 trackMatchingView
 tran
@@ -2030,6 +2052,7 @@ trunc
 tschan
 ttl
 tubman
+tx
 txt
 typeahead
 typecast
