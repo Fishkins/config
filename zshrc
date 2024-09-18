@@ -73,19 +73,29 @@ copycase() {
 }
 setupstream() {
     local repo="$(basename $(git rev-parse --show-toplevel))"
-    local upstream=origin/master
+    local remote=origin
+    local branch=master
 
     if [[ $repo == aws-devops ]]
     then
-        upstream=origin/resolved
+        remote=origin
+        branch=resolved
     elif [[ $repo == donorschoose-web ]]
     then
-        upstream=dc/resolved
+        remote=dc
+        branch=resolved
     fi
 
-    git branch --set-upstream-to=$upstream
+    if [[ $(git curbranch) == master ]]
+    then
+        # never set master up to track resolved
+        branch=master
+    fi
+
+    git branch --set-upstream-to=$remote/$branch
     git pull --rebase
 }
+
 casecommit() {
     if [[ $(git curbranch) =~ ^(WS|IOPS) ]]
     then
@@ -156,15 +166,16 @@ autoload -U +X bashcompinit && bashcompinit
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 complete -C '/opt/homebrew/bin/aws_completer' aws
 
+deleteMergedBranches() {
+    git branch --merged | grep -E -v "(\*|master|resolved|main)" | xargs git branch -d
+}
+
 deleteapplicationbranchesfromdockerrepos() {
     pushd $DEV_SRC
     ls | grep -E "docker|fastly" | while read repo
     do
         pushd $repo
-        git branch| grep 'WS-' | while read branch
-        do
-            git branch -D $branch
-        done
+        git branch | grep '^ *WS-' | xargs git branch -D
         popd
     done
     popd
