@@ -14,9 +14,7 @@ export DC_WEB=$DEV_SRC/donorschoose-web/web
 export AWS_DEVOPS_DIR=$DEV_SRC/aws-devops
 export FASTLY_DIR=$DEV_SRC/fastly
 export JMETER_DIR=$DEV_SRC/jmeter
-# export PATH="$DEV_BIN/jdk-11.0.8+10/Contents/Home/bin:$PATH"
 export PATH="$DEV_BIN/jdk-11.0.22+7/Contents/Home/bin:$PATH"
-# export JAVA_HOME="$HOME/Developer/usr/bin/jdk-11.0.8+10/Contents/Home"
 export JAVA_HOME="$HOME/Developer/usr/bin/jdk-11.0.8+10/Contents/Home"
 
 export LESS="IFRX"

@@ -1,4 +1,4 @@
-personal_ws-1.1 en 2184 
+personal_ws-1.1 en 2193 
 ABSearchURLFragment
 ACL
 AES
@@ -14,6 +14,7 @@ ARLs
 ASG
 ASGs
 ASR
+ATO
 AWS
 AWSTemplateFormatVersion
 AYF
@@ -442,6 +443,7 @@ NSFW
 NVC
 NYC
 NYE
+NaN
 NameVirtualHost
 Nancy's
 Nashorn
@@ -462,6 +464,7 @@ OFAC
 OG
 OHH
 OHH's
+OIDC
 OO
 OOM
 OOMs
@@ -487,6 +490,7 @@ PHP
 PID
 PJ
 PNC
+POPs
 POSTs
 PPI
 PQA
@@ -696,6 +700,7 @@ ToySearchController
 Travefy
 Trin
 Tunnelblick
+TypeScript
 Typekit
 UDP
 UI
@@ -1440,6 +1445,7 @@ kennedys
 keychain
 killjob
 kops
+kotlin
 krol
 krongu
 kube
@@ -1807,6 +1813,7 @@ recs
 redelivery
 redemptions
 redir
+redux
 refactor
 refactored
 refactoring
@@ -1867,6 +1874,7 @@ san
 sauvignon
 sbin
 scalability
+scalable
 scanii
 schoolid
 schoolname
@@ -2054,6 +2062,7 @@ triaged
 trie
 trimesterly
 trunc
+tsc
 tschan
 ttl
 tubman

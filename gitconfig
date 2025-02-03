@@ -30,7 +30,7 @@
     co = checkout
     ci = commit
     rb = rebase
-    wdiff = "diff --ignore-space-at-eol -b --ignore-blank-lines -w --word-diff"
+    wdiff = "diff --ignore-space-at-eol -b --ignore-blank-lines -w" #  "--word-diff"
     stat = "status -s"
     curbranch = "rev-parse --abbrev-ref HEAD"
     fetchone = "!f() { git fetch $1 $2:refs/remotes/$1/$2; }; f"
@@ -38,7 +38,7 @@
     logp = "log -w -p --follow"
     fix = "!f() { git commit -a --fixup \"$1\"; }; f"
     amend = "commit --amend --no-edit -a"
-    sho = "show -w --ignore-space-at-eol -b --ignore-blank-lines --word-diff"
+    sho = "show -w --ignore-space-at-eol -b --ignore-blank-lines"
     cam = "commit -a -m"
 [color]
     ui = true
