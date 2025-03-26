@@ -163,7 +163,6 @@ cd . # This triggers the function that sets pwd as the terminal header
 
 autoload -U +X bashcompinit && bashcompinit
 
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
 complete -C '/opt/homebrew/bin/aws_completer' aws
 
 deleteMergedBranches() {
@@ -176,6 +175,19 @@ deleteapplicationbranchesfromdockerrepos() {
     do
         pushd $repo
         git branch | grep '^ *WS-' | xargs git branch -D
+        popd
+    done
+    popd
+}
+
+cleanUpDockerRepos() {
+    pushd $DEV_SRC
+    ls | grep -E "docker|fastly" | while read repo
+    do
+        pushd $repo
+        git co master
+        git pull
+        git branch --merged | grep -E -v "(\*|master|resolved|main)" | xargs git branch -d
         popd
     done
     popd

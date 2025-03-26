@@ -7,6 +7,9 @@ export PATH="/opt/homebrew/opt/curl/bin:/opt/homebrew/opt/openssl@3/bin:/opt/hom
 eval "$(/opt/homebrew/bin/brew shellenv)"
 export PATH="/opt/homebrew/opt/python@3.8/libexec/bin:$PATH"
 
+export ASDF_DATA_DIR="$HOME/.asdf"
+export PATH="$ASDF_DATA_DIR/shims:$PATH"
+
 export DEV_HOME=~/Developer
 export DEV_BIN=$DEV_HOME/usr/bin
 export DEV_SRC=$DEV_HOME/src
@@ -18,3 +21,5 @@ export PATH="$DEV_BIN/jdk-11.0.22+7/Contents/Home/bin:$PATH"
 export JAVA_HOME="$HOME/Developer/usr/bin/jdk-11.0.8+10/Contents/Home"
 
 export LESS="IFRX"
+
+export PATH="/Applications/kdiff3.app/Contents/MacOS:$PATH"
