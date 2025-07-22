@@ -1,4 +1,4 @@
-personal_ws-1.1 en 2195 
+personal_ws-1.1 en 2205 
 ABSearchURLFragment
 ACL
 AES
@@ -139,6 +139,7 @@ CloudFormation
 Cloudbleed
 CompareDistance
 Comparision
+CookieScript
 CopyConfig
 CoreOS
 Coreos
@@ -211,6 +212,7 @@ ELB
 EMs
 EPS
 EQL
+ESLint
 ESM
 ETL
 Eau
@@ -258,6 +260,7 @@ GKE
 GP
 GPG
 GPs
+GTM
 GeoNames
 Ghenet
 GiB
@@ -269,12 +272,14 @@ Grafana
 Greenler
 Grinnell
 Gustafson
+HCP
 HDDs
 HN
 HQL
 HSED
 HSTS
 HSTS's
+HackerRank
 Haines
 Hallowe'en
 Hamell
@@ -369,6 +374,7 @@ LBE
 LBEs
 LDF
 LF
+LLMs
 LMK
 LOTR
 LRCP
@@ -695,6 +701,7 @@ Thur
 ToPort
 Tollbooth
 Tommy's
+Toussida
 ToyLayout
 ToyLocation
 ToyProjects
@@ -967,6 +974,7 @@ coney
 conf
 config
 configmap
+configmaps
 constructUrlAlias
 convertProposalUpdateVOsToProposalFeedVOs
 convo
@@ -1205,6 +1213,7 @@ firstname
 fishkins
 fka
 fl
+fluentbit
 fn
 foglyn
 followEmailHolder
@@ -1920,6 +1929,7 @@ shortdescription
 showZeroFacetCountsForSchools
 shoyu
 sidebar
+signifiers
 signin
 signout
 signup

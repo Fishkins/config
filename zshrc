@@ -169,17 +169,6 @@ deleteMergedBranches() {
     git branch --merged | grep -E -v "(\*|master|resolved|main)" | xargs git branch -d
 }
 
-deleteapplicationbranchesfromdockerrepos() {
-    pushd $DEV_SRC
-    ls | grep -E "docker|fastly" | while read repo
-    do
-        pushd $repo
-        git branch | grep '^ *WS-' | xargs git branch -D
-        popd
-    done
-    popd
-}
-
 cleanUpDockerRepos() {
     pushd $DEV_SRC
     ls | grep -E "docker|fastly" | while read repo
@@ -187,7 +176,7 @@ cleanUpDockerRepos() {
         pushd $repo
         git co master
         git pull
-        git branch --merged | grep -E -v "(\*|master|resolved|main)" | xargs git branch -d
+        deleteMergedBranches
         popd
     done
     popd
