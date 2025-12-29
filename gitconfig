@@ -3,7 +3,7 @@
     autocrlf = input
     editor = vim
     ignorecase = true
-    excludesfile = /Users/fishkins/.gitignore_global
+	excludesfile = /Users/chrisjudkins-fisher/.gitignore_global
     pager = delta
 [delta]
     syntax-theme = Solarized (light)
@@ -40,6 +40,7 @@
     amend = "commit --amend --no-edit -a"
     sho = "show -w --ignore-space-at-eol -b --ignore-blank-lines"
     cam = "commit -a -m"
+    whatchange = "log --raw"
 [color]
     ui = true
     meta = yellow bold
@@ -58,3 +59,9 @@
     postBuffer = 157286400
 [ssh]
     postBuffer = 524288000
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
