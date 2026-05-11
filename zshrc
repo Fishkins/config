@@ -48,6 +48,10 @@ gpushcurrresolved() {
     then
         remote=dc
         branch=resolved
+    elif [[ $repo == claude-settings ]]
+    then
+        remote=origin
+        branch=main
     fi
 
     echo "Are you sure you want to push to $repo $remote/$branch? (y/n)"
@@ -116,6 +120,7 @@ alias killFswatch="ps -ef | grep fswatch | grep -v grep | awk '{print $2}' | xar
 alias noelcopy="tr -d '\n' | pbcopy"
 alias en="emacsclient -n"
 alias cdg="cd $DEV_SRC"
+alias cdd="cd $DC_BASE"
 alias cdw="cd $DC_WEB"
 alias cda="cd $AWS_DEVOPS_DIR"
 alias cdf="cd $FASTLY_DIR"
@@ -240,3 +245,8 @@ function pods() {
                phase: .status.phase
               }' 
 }
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/chrisjudkins-fisher/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions

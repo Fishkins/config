@@ -1,4 +1,4 @@
-personal_ws-1.1 en 2214 
+personal_ws-1.1 en 2227 
 ABSearchURLFragment
 ACL
 AES
@@ -109,6 +109,7 @@ CSV
 CTCV
 CTE
 CTEs
+CTO
 CTOs
 CVE
 CVRCHES
@@ -144,6 +145,7 @@ CopyConfig
 CoreOS
 Coreos
 Coursera
+Cowork
 Craigslist
 CreateChallengeController
 Crossland
@@ -300,10 +302,12 @@ HostedGraphite
 Hotfixed
 Hotfixes
 IAM
+IC
 ICs
 IDE
 IDs
 IFRX
+IIRC
 IJ
 IM
 IMDB
@@ -313,6 +317,7 @@ IP
 IPAs
 IPs
 IRA
+IRL
 IXL
 IaC
 Ian
@@ -376,6 +381,7 @@ LBE
 LBEs
 LDF
 LF
+LLM
 LLMs
 LMK
 LOTR
@@ -397,6 +403,7 @@ Logentries
 Logz
 Lollapolooza
 Los
+MCP
 MDR
 MPLS
 MPM
@@ -495,6 +502,7 @@ Ornette
 Orpheum
 PBD
 PCI
+PED
 PGQ
 PHP
 PID
@@ -561,6 +569,7 @@ RFParamForProjectWithTeacherIdDecorator
 RHS
 RJD
 RMQ
+RTL
 RabbitMQ
 RabbitMQ's
 RabbitmqConsumer
@@ -620,6 +629,7 @@ SVN
 SWU
 Sahana
 Sakariya
+Sandboxing
 Sanjana
 Scala
 Scenesters
@@ -735,11 +745,13 @@ VMs
 VOs
 VPC
 VPN
+VPs
 Vadim
 ViewChallengeAPIController
 ViewChallengeController
 Vinnies
 Vinny's
+Vite
 Vlad
 VpcCidr
 VpcId
@@ -2107,6 +2119,7 @@ unencrypted
 unhashed
 unilateralis
 uninstall
+unintuitive
 uniq
 unparam
 unparseable
